@@ -1,0 +1,190 @@
+/* ========================= */
+/*        BASE GLOBAL        */
+/* ========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Times New Roman", serif;
+  background: radial-gradient(circle at center, #caa14c 0%, #0a0a0a 65%);
+  color: #fff;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* Para suavizar tudo */
+img {
+  display: block;
+}
+
+/* ========================= */
+/*         HEADER            */
+/* ========================= */
+
+.header {
+  padding: 60px 20px 40px;
+}
+
+.title {
+  font-size: 56px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 16px;
+  opacity: 0.85;
+  line-height: 1.7;
+}
+
+/* ========================= */
+/*        APRESENTAÇÃO       */
+/* ========================= */
+
+.section {
+  padding: 60px 20px;
+}
+
+.section-title {
+  font-size: 34px;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+.intro-text {
+  max-width: 850px;
+  margin: 0 auto;
+  font-size: 17px;
+  opacity: 0.85;
+  line-height: 1.8;
+}
+
+/* ========================= */
+/*       GRID PRINCIPAL      */
+/* ========================= */
+
+.grid {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  padding: 70px 25px;
+}
+
+.col {
+  width: 280px;
+  padding: 30px 20px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  transition: 0.3s;
+}
+
+.col:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.col-title {
+  font-size: 24px;
+  margin-bottom: 25px;
+  font-weight: bold;
+}
+
+/* ========================= */
+/*        ITENS PESSOA       */
+/* ========================= */
+
+.person {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 18px 0;
+}
+
+.person img {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 2px solid #d2b46c;
+  object-fit: cover;
+  background: #000;
+}
+
+.person span {
+  font-size: 17px;
+  opacity: 0.95;
+}
+
+/* ========================= */
+/*          BOTÕES           */
+/* ========================= */
+
+.btn {
+  margin-top: 25px;
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 15px;
+  border-radius: 40px;
+  border: 1px solid #d3b46a;
+  background: transparent;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: rgba(210, 180, 106, 0.2);
+  border-color: #e8c77d;
+}
+
+/* ========================= */
+/*     SEÇÕES COMPLETAS      */
+/* ========================= */
+
+.full-section {
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.full-section h2 {
+  margin-bottom: 35px;
+  font-size: 30px;
+}
+
+.full-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* ========================= */
+/*        RESPONSIVIDADE     */
+/* ========================= */
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 38px;
+  }
+
+  .col {
+    width: 100%;
+    max-width: 330px;
+  }
+
+  .person span {
+    font-size: 16px;
+  }
+}
