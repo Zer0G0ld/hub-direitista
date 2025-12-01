@@ -1,0 +1,43 @@
+<svg width="220" height="220" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradiente dourado -->
+    <radialGradient id="gold" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#FFF7D1"/>
+      <stop offset="50%" stop-color="#E8C784"/>
+      <stop offset="100%" stop-color="#C8A044"/>
+    </radialGradient>
+
+    <!-- Borda dourada -->
+    <linearGradient id="gold-stroke" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFF2C2"/>
+      <stop offset="50%" stop-color="#D8B567"/>
+      <stop offset="100%" stop-color="#B88D33"/>
+    </linearGradient>
+
+    <!-- Caminho interno para o texto (dentro do círculo) -->
+    <path id="inner-circle-text" 
+      d="M 110,28 
+         A 82,82 0 1,1 109.9,28" />
+  </defs>
+
+  <!-- Fundo -->
+  <circle cx="110" cy="110" r="100"
+          fill="url(#gold)" stroke="url(#gold-stroke)" stroke-width="6"/>
+
+  <!-- Ornamento interno -->
+  <circle cx="110" cy="110" r="70"
+          fill="none" stroke="url(#gold-stroke)" stroke-width="2" opacity="0.9"/>
+
+  <!-- Insígnia central -->
+  <text x="110" y="128" text-anchor="middle"
+        font-size="42" fill="url(#gold-stroke)" font-family="Georgia">
+    ✦
+  </text>
+
+  <!-- TEXTO CURVADO DENTRO DO CÍRCULO -->
+  <text font-size="13" font-family="Garamond" fill="#3b2d0f" letter-spacing="3">
+    <textPath href="#inner-circle-text" startOffset="50%" text-anchor="middle">
+      O FUTURO É GLORIOSO • O FUTURO É GLORIOSO •
+    </textPath>
+  </text>
+</svg>
