@@ -5,75 +5,81 @@ const hubData = {
   producao: [
     {
       name: "Zer0",
-      img: "./public/icons/default.jpg",
+      img: "./public/persons/zer0g0ld.png",
       links: {
         Substack: "https://substack.com/@zer0g0ld"
       }
     },
     {
-      name: "Staan",
-      img: "./public/icons/default.jpg",
+      name: "Staan Marsh",
+      img: "./public/persons/Staan_Marsh.png",
       links: {
-        Substack: "https://seu-substack.com/staan"
+        Substack: "https://substack.com/@adson02"
       }
     },
     {
-      name: "Montoya",
-      img: "./public/icons/default.jpg",
+      name: "Noir",
+      img: "./public/persons/Noir.png",
       links: {
-        Substack: "https://seu-substack.com/montoya"
+        Substack: "https://substack.com/@noiret"
       }
-    }
+    },
+    {
+      name: "Arnando Leal",
+      img: "./public/persons/Armando_Leal.png",
+      links: {
+        Substack: "https://substack.com/@historiacontraataca"
+      }
+    },
+    {
+      name: "Luciano LS",
+      img: "./public/persons/Luciano_LS.png",
+      links: {
+        Substack: "https://substack.com/@lucianols"
+      }
+    },
+    {
+      name: "Gabriel C. Tavares",
+      img: "./public/persons/Gabriel_C_Tavares.png",
+      links: {
+        Substack: "https://substack.com/@quietbiel93"
+      }
+    },
+    {
+      name: "Francielly Stempkowski",
+      img: "./public/persons/Francielly_Stempkowski.png",
+      links: {
+        Substack: "https://substack.com/@stempkowski"
+      }
+    },
+    {
+      name: "Cristian Brocca",
+      img: "./public/persons/Cristian_Brocca.png",
+      links: {
+        Substack: "https://substack.com/@cristianbrocca"
+      }
+    },
   ],
 
   portavoze: [
     {
       name: "Midia BH",
-      img: "./public/icons/tech.jpg",
+      img: "./public/porta_vozes/BrunoDiasPR.jpg",
       links: {
-        YouTube: "https://youtube.com",
-        Kick: "https://kick.com"
+        YouTube: "https://www.youtube.com/@MidiaBH",
+        Kick: "https://kick.com/brunodiaspr"
       }
     },
-    {
-      name: "Brasão",
-      img: "./public/icons/tech.jpg",
-      links: {
-        YouTube: "https://youtube.com"
-      }
-    },
-    {
-      name: "IMPERA",
-      img: "./public/icons/tech.jpg",
-      links: {
-        YouTube: "https://youtube.com",
-        Kick: "https://kick.com"
-      }
-    }
   ],
 
   plataformas: [
     {
       name: "Aristocracia",
-      img: "./public/icons/tenee.jpg",
+      img: "./public/icons/default.jpg",
       links: {
-        Discord: "https://discord.gg/seuconvite"
+        Discord: "https://discord.gg/XncGYt2Y7g"
       }
     },
-    {
-      name: "Pardistão",
-      img: "./public/icons/tenee.jpg",
-      links: {
-        Discord: "https://discord.gg/seuconvite"
-      }
-    },
-    {
-      name: "Missão",
-      img: "./public/icons/tenee.jpg",
-      links: {
-        Discord: "https://discord.gg/seuconvite"
-      }
-    }
   ]
 };
 
