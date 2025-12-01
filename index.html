@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hub Direitista</title>
+
   <link rel="stylesheet" href="styles.css" />
   <script src="script.js" defer></script>
 </head>
@@ -12,56 +13,65 @@
 
   <!-- HEADER -->
   <header class="header">
-    <h1 class="title">HUB DIREITISTA</h1>
+    <h1 class="title">
+      <span class="title-motto">O FUTURO É GLORIOSO</span>
+      HUB DIREITISTA
+      <img src="./public/icons/selo.svg" alt="Selo O Futuro é Glorioso" class="selo" />
+    </h1>
+
     <p class="subtitle">
-      Não busco consenso: busco ordem, clareza e responsabilidade.
-      Quem teme a verdade jamais compreenderá a firmeza de quem permanece de pé.
+      Um círculo de jovens talentos que rejeita o conformismo, enfrenta a decadência política
+      e assume a responsabilidade que gerações inteiras abandonaram.
     </p>
   </header>
 
   <!-- APRESENTAÇÃO -->
   <section class="intro section">
     <h2 class="section-title">Apresentação</h2>
+
     <p class="intro-text">
-      O Hub Direitista reúne vozes, mentes e plataformas dedicadas à produção
-      de ideias sólidas, defesa de valores e organização de movimentos.
-      Aqui você conhece quem constrói, quem comunica e quem impulsiona.
+      A Bolha é composta por jovens inteligentes, críticos e inquietos —
+      uma nova nobreza intelectual que recusa a mediocridade dominante
+      na política nacional e internacional.
+    </p>
+
+    <p class="intro-text">
+      Aqui ideias nascem, debates acontecem e memes convivem com
+      reflexões profundas sem perder o espírito combativo.
+    </p>
+
+    <p class="intro-text">
+      Somos um grupo que, cansado da incompetência herdada,
+      decidiu pensar mais alto do que os boomers jamais ousaram.
+    </p>
+
+    <p class="intro-text">
+      Talvez falhemos; talvez acertemos.
+      Mas escolhemos não permanecer parados.
     </p>
   </section>
 
   <!-- MINI-GRID DOS SETORES -->
   <section class="grid section">
-    
+
     <!-- PRODUÇÃO INTELECTUAL -->
     <div class="col">
       <h3 class="col-title">Produção Intelectual</h3>
-
-      <div class="person"><img src="/public/icons/default.jpg" alt=""><span>Zer0</span></div>
-      <div class="person"><img src="/public/icons/default.jpg" alt=""><span>Staan</span></div>
-      <div class="person"><img src="/public/icons/default.jpg" alt=""><span>Montoya</span></div>
-
+      <div id="mini-producao"></div>
       <a href="#sec-producao" class="btn">CONHEÇA</a>
     </div>
 
     <!-- PORTA-VOZES -->
     <div class="col">
       <h3 class="col-title">Porta-vozes</h3>
-
-      <div class="person"><img src="/public/icons/tech.jpg" alt=""><span>Midia BH</span></div>
-      <div class="person"><img src="/public/icons/tech.jpg" alt=""><span>Brasão</span></div>
-      <div class="person"><img src="/public/icons/tech.jpg" alt=""><span>IMPERA</span></div>
-
+      <div id="mini-portavoze"></div>
       <a href="#sec-portavozes" class="btn">CONHEÇA</a>
     </div>
 
     <!-- PLATAFORMAS -->
     <div class="col">
       <h3 class="col-title">Plataformas</h3>
-
-      <div class="person"><img src="/public/icons/tenee.jpg" alt=""><span>Aristocracia</span></div>
-      <div class="person"><img src="/public/icons/tenee.jpg" alt=""><span>Pardistão</span></div>
-      <div class="person"><img src="/public/icons/tenee.jpg" alt=""><span>Missão</span></div>
-
+      <div id="mini-plataformas"></div>
       <a href="#sec-plataformas" class="btn">CONHEÇA</a>
     </div>
 
@@ -73,34 +83,20 @@
 
   <section id="sec-producao" class="full-section">
     <h2 class="section-title">Produção Intelectual – Completo</h2>
-
-    <div class="full-list">
-      <div class="person"><img src="/public/icons/default.jpg" alt=""><span>Zer0</span></div>
-      <div class="person"><img src="/public/icons/default.jpg" alt=""><span>Staan</span></div>
-      <div class="person"><img src="/public/icons/default.jpg" alt=""><span>Montoya</span></div>
-    </div>
+    <div id="lista-producao" class="full-list"></div>
   </section>
 
   <section id="sec-portavozes" class="full-section">
     <h2 class="section-title">Porta-vozes – Completo</h2>
-
-    <div class="full-list">
-      <div class="person"><img src="/public/icons/tech.jpg" alt=""><span>Midia BH</span></div>
-      <div class="person"><img src="/public/icons/tech.jpg" alt=""><span>Brasão</span></div>
-      <div class="person"><img src="/public/icons/tech.jpg" alt=""><span>IMPERA</span></div>
-    </div>
+    <div id="lista-portavoze" class="full-list"></div>
   </section>
 
   <section id="sec-plataformas" class="full-section">
     <h2 class="section-title">Plataformas – Completo</h2>
-
-    <div class="full-list">
-      <div class="person"><img src="/public/icons/tenee.jpg" alt=""><span>Aristocracia</span></div>
-      <div class="person"><img src="/public/icons/tenee.jpg" alt=""><span>Pardistão</span></div>
-      <div class="person"><img src="/public/icons/tenee.jpg" alt=""><span>Missão</span></div>
-    </div>
+    <div id="lista-plataformas" class="full-list"></div>
   </section>
 
+  <!-- FOOTER -->
   <footer class="footer">
     <p>© 2024 Hub Direitista. Todos os direitos reservados.</p>
   </footer>
