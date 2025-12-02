@@ -153,6 +153,51 @@ body {
   overscroll-behavior: contain;
 }
 `;
+/// ===========================================
+/// TROCA ALEATORIAMENTE OS MINI-GRIDS
+///===========================================
+function renderSection(list, targetMini, targetFull) {
+  const mini = document.querySelector(targetMini);
+  const full = document.querySelector(targetFull);
+
+  // --- Renderiza lista completa ---
+  list.forEach(person => {
+    full.innerHTML += createFullPersonHTML(person);
+  });
+
+  // --- FUNÇÃO QUE MOSTRA 3 ALEATÓRIOS NO MINI ---
+  function updateMini() {
+    mini.innerHTML = ""; // limpa
+
+    let selected = [];
+
+    if (list.length <= 3) {
+      selected = [...list]; // mostra todos
+    } else {
+      // embaralha os itens
+      const shuffled = [...list].sort(() => Math.random() - 0.5);
+      selected = shuffled.slice(0, 3); // pega 3 aleatórios
+    }
+
+    selected.forEach(person => {
+      mini.innerHTML += createPersonHTML(person);
+    });
+
+    // reaplicar fade in nos novos elementos
+    mini.querySelectorAll(".person").forEach(el => {
+      el.classList.add("hidden");
+      setTimeout(() => el.classList.add("show"), 50);
+    });
+  }
+
+  // exibe imediatamente
+  updateMini();
+
+  // se tiver mais de 3, troca automaticamente a cada 15 segundos
+  if (list.length > 3) {
+    setInterval(updateMini, 15000);
+  }
+}
 
 // ===========================================
 // Fade-in ao aparecer na tela (scroll reveal)
