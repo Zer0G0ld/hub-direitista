@@ -3,7 +3,7 @@
 // ===============================================
 const hubData = {
   producao: [
-    { name: "Zer0", img: "./public/persons/zer0g0ld.png", links: { Substack: "https://zer0g0ld.substack.com/" } },
+    { name: "Zer0", img: "./public/persons/zer0g0ld.png", links: { Substack: "https://substack.com/@zer0g0ld" } },
     { name: "Staan Marsh", img: "./public/persons/Staan_Marsh.png", links: { Substack: "https://substack.com/@adson02" } },
     { name: "Noir", img: "./public/persons/Noir.png", links: { Substack: "https://substack.com/@noiret" } },
     { name: "Arnando Leal", img: "./public/persons/Armando_Leal.png", links: { Substack: "https://substack.com/@historiacontraataca" } },
@@ -11,12 +11,13 @@ const hubData = {
     { name: "Gabriel C. Tavares", img: "./public/persons/Gabriel_C_Tavares.png", links: { Substack: "https://substack.com/@quietbiel93" } },
     { name: "Francielly Stempkowski", img: "./public/persons/Francielly_Stempkowski.png", links: { Substack: "https://substack.com/@stempkowski" } },
     { name: "Cristian Brocca", img: "./public/persons/Cristian_Brocca.png", links: { Substack: "https://substack.com/@cristianbrocca" } },
+    { name: "Patriota Catarinense", img: "./public/persons/Patriota_Catarinense.png", links: { Substack: "https://substack.com/@mts1622652" } },
   ],
   portavoze: [
     { name: "Midia BH", img: "./public/porta_vozes/BrunoDiasPR.jpg", links: { YouTube: "https://www.youtube.com/@MidiaBH", Kick: "https://kick.com/brunodiaspr" } },
   ],
   plataformas: [
-    { name: "Aristocracia", img: "./public/icons/default.jpg", links: { Discord: "https://discord.gg/XncGYt2Y7g" } },
+    { name: "Aristocracia", img: "./public/icons/Aristocracia.png", links: { Discord: "https://discord.gg/XncGYt2Y7g" } },
   ]
 };
 /// Deve puxar do arquivo db.json
