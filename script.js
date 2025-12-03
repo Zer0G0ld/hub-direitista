@@ -1,7 +1,7 @@
 // ===============================================
 // BANCO DE DADOS DO HUB — simples, limpo e expansível
 // ===============================================
-/*const hubData = {
+const hubData = {
   producao: [
     { name: "Zer0", img: "./public/persons/zer0g0ld.png", links: { Substack: "https://zer0g0ld.substack.com/" } },
     { name: "Staan Marsh", img: "./public/persons/Staan_Marsh.png", links: { Substack: "https://substack.com/@adson02" } },
@@ -18,7 +18,7 @@
   plataformas: [
     { name: "Aristocracia", img: "./public/icons/default.jpg", links: { Discord: "https://discord.gg/XncGYt2Y7g" } },
   ]
-};*/
+};
 /// Deve puxar do arquivo db.json
 //import hubData from "./src/data/db.json" assert { type: "json" };
 

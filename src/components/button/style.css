@@ -1,0 +1,37 @@
+.btn {
+  margin-top: 30px;
+  display: inline-block;
+  padding: 14px 38px;
+  font-size: 15px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--gold-400);
+  background: var(--glass-bg);
+  color: #fff;
+  text-decoration: none;
+  transition: var(--transition-default);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.btn:hover {
+  background: rgba(230, 200, 130, 0.25);
+  border-color: var(--gold-300);
+  box-shadow: var(--shadow-hover);
+}
+
+.link-btn {
+  padding: 7px 18px;
+  border-radius: var(--radius-sm);
+  background: rgba(210, 180, 106, 0.25);
+  color: white;
+  text-decoration: none;
+  border: 1px solid var(--gold-500);
+  font-size: 14px;
+  transition: var(--transition-fast);
+  font-weight: 500;
+}
+
+.link-btn:hover {
+  background: rgba(210, 180, 106, 0.38);
+  box-shadow: var(--shadow-gold);
+}

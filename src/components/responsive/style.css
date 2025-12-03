@@ -1,0 +1,37 @@
+@media (max-width: 650px) {
+  .title {
+    font-size: var(--font-size-title-mobile);
+  }
+
+  .title-motto {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .selo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .col {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  .title {
+    font-size: 32px;
+  }
+
+  .section-title {
+    font-size: 26px;
+  }
+
+  .person span {
+    font-size: 15px;
+  }
+
+  .full-person {
+    padding: 12px;
+  }
+}
