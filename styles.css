@@ -231,6 +231,7 @@ img {
   align-items: center;
   gap: 20px;
   padding: 16px;
+  
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.07);
   border: 1px solid rgba(255, 255, 255, 0.18);

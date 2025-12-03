@@ -1,0 +1,58 @@
+/* ========================= */
+/*         HEADER            */
+/* ========================= */
+
+.header {
+  padding: 80px 20px 50px;
+}
+
+.title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 58px;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  font-weight: 700;
+  color: #f5dca1;
+  text-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+}
+
+
+.title-motto {
+  font-size: 14px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #f2d59a;
+  opacity: 0.85;
+  margin-bottom: -4px;
+
+  font-family: "Times New Roman", serif; 
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.45);
+}
+
+.subtitle {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 18px;
+  opacity: 0.9;
+  line-height: 1.75;
+  color: #f0e8d2;
+}
+
+/* Selo no título */
+.selo {
+  width: 72px;
+  height: 72px;
+  filter: drop-shadow(0 0 7px rgba(0,0,0,0.55));
+  transform: translateY(-6px);
+  transition: 0.35s ease;
+}
+
+.selo:hover {
+  transform: translateY(-6px) scale(1.08);
+  filter: drop-shadow(0 0 12px rgba(255, 225, 160, 0.6));
+}
