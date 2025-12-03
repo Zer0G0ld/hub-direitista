@@ -1,29 +1,19 @@
 // ===============================================
-// BANCO DE DADOS DO HUB — simples, limpo e expansível
+// BANCO DE DADOS DO HUB — Carrega db.json
 // ===============================================
-const hubData = {
-  producao: [
-    { name: "Zer0", img: "./public/persons/zer0g0ld.png", links: { Substack: "https://zer0g0ld.substack.com/" } },
-    { name: "Staan Marsh", img: "./public/persons/Staan_Marsh.png", links: { Substack: "https://substack.com/@adson02" } },
-    { name: "Noir", img: "./public/persons/Noir.png", links: { Substack: "https://substack.com/@noiret" } },
-    { name: "Arnando Leal", img: "./public/persons/Armando_Leal.png", links: { Substack: "https://substack.com/@historiacontraataca" } },
-    { name: "Luciano LS", img: "./public/persons/Luciano_LS.png", links: { Substack: "https://substack.com/@lucianols" } },
-    { name: "Gabriel C. Tavares", img: "./public/persons/Gabriel_C_Tavares.png", links: { Substack: "https://substack.com/@quietbiel93" } },
-    { name: "Francielly Stempkowski", img: "./public/persons/Francielly_Stempkowski.png", links: { Substack: "https://substack.com/@stempkowski" } },
-    { name: "Cristian Brocca", img: "./public/persons/Cristian_Brocca.png", links: { Substack: "https://substack.com/@cristianbrocca" } },
-  ],
-  portavoze: [
-    { name: "Midia BH", img: "./public/porta_vozes/BrunoDiasPR.jpg", links: { YouTube: "https://www.youtube.com/@MidiaBH", Kick: "https://kick.com/brunodiaspr" } },
-  ],
-  plataformas: [
-    { name: "Aristocracia", img: "./public/icons/default.jpg", links: { Discord: "https://discord.gg/XncGYt2Y7g" } },
-  ]
-};
-/// Deve puxar do arquivo db.json
-//import hubData from "./src/data/db.json" assert { type: "json" };
+async function loadDB() {
+  try {
+    const res = await fetch("./data/db.json");
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return await res.json();
+  } catch (err) {
+    console.error("Erro ao carregar banco de dados:", err);
+    return { producao: [], portavoze: [], plataformas: [] };
+  }
+}
 
 // ===============================================
-// GERADOR DE HTML AUTOMÁTICO (mini e full)
+// GERADORES DE HTML (mini, full e artigos)
 // ===============================================
 const createPersonHTML = (person) => `
   <div class="person hidden">
@@ -33,9 +23,14 @@ const createPersonHTML = (person) => `
 `;
 
 const createFullPersonHTML = (person) => {
-  const linksHTML = Object.entries(person.links)
-    .map(([label, url]) => `<a href="${url}" class="link-btn" target="_blank">${label}</a>`)
+  const linksHTML = Object.entries(person.links || {})
+    .map(([label, data]) => {
+      // Caso link seja string (Ex: YouTube), mantém compatibilidade
+      const url = typeof data === "string" ? data : data.url;
+      return `<a href="${url}" class="link-btn" target="_blank" rel="noopener noreferrer">${label}</a>`;
+    })
     .join("");
+
   return `
     <div class="full-person hidden">
       <img src="${person.img}" alt="${person.name}">
@@ -53,26 +48,74 @@ const createArticleHTML = (person, article) => `
     <div class="fp-info">
       <strong>${person.name}</strong>
       <div class="fp-links">
-        <a href="${article.link}" target="_blank" class="link-btn">${article.title}</a>
+        <a href="${article.link}" target="_blank" rel="noopener noreferrer" class="link-btn">
+          ${article.title}
+        </a>
       </div>
     </div>
   </div>
 `;
 
 // ===============================================
-// Função para pegar RSS do Substack
+// Função para pegar domínio real do Substack
 // ===============================================
-async function fetchSubstackArticles(substackUrl) {
-  const user = substackUrl.replace(/https?:\/\/(www\.)?substack\.com\/@?/, "").replace(/\/$/, "");
-  const rssUrl = `https://${user}.substack.com/feed`;
-  const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+async function getRealSubstackDomain(substackObj) {
+  if (!substackObj?.url) return null;
+
+  const url = substackObj.url;
+  const type = substackObj.type;
 
   try {
+    // Caso seja domínio direto
+    if (type === "domain") {
+      return new URL(url).hostname.replace("www.", "");
+    }
+
+    // Caso seja perfil @usuario
+    if (type === "profile") {
+      const match = url.match(/@([a-zA-Z0-9_-]+)/);
+      if (!match) return null;
+
+      const username = match[1];
+
+      const apiUrl = `https://substack.com/profile/${username}.json`;
+      const res = await fetch(apiUrl);
+      if (!res.ok) return null;
+
+      const data = await res.json();
+
+      if (data.publication?.subdomain) {
+        return `${data.publication.subdomain}.substack.com`;
+      }
+
+      return null;
+    }
+
+    return null;
+  } catch (e) {
+    console.error("Erro descobrindo domínio:", e);
+    return null;
+  }
+}
+
+// ===============================================
+// Busca RSS do Substack
+// ===============================================
+async function fetchSubstackArticles(substackObj) {
+  try {
+    const domain = await getRealSubstackDomain(substackObj);
+    if (!domain) return [];
+
+    const rssUrl = `https://${domain}/feed`;
+    const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+
     const res = await fetch(apiUrl);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
     const data = await res.json();
-    return data.items ? data.items.slice(0, 3) : []; // últimos 3 artigos
+    return data.items ? data.items.slice(0, 3) : [];
   } catch (err) {
-    console.error("Erro ao buscar RSS:", err);
+    console.error("Erro ao buscar RSS:", substackObj?.url, err);
     return [];
   }
 }
@@ -83,64 +126,79 @@ async function fetchSubstackArticles(substackUrl) {
 async function renderArticlesRSS(list, target) {
   const container = document.querySelector(target);
 
-  for (let person of list) {
-    if (!person.links.Substack) continue;
+  for (const person of list) {
+    if (!person.links?.Substack) continue;
 
     const articles = await fetchSubstackArticles(person.links.Substack);
-    articles.forEach(article => {
-      container.innerHTML += createArticleHTML(person, article);
-    });
+
+    for (const article of articles) {
+      container.insertAdjacentHTML(
+        "beforeend",
+        createArticleHTML(person, article)
+      );
+    }
   }
 
-  container.querySelectorAll(".hidden").forEach(el => observer.observe(el));
+  container.querySelectorAll(".hidden").forEach((el) => observer.observe(el));
 }
 
 // ===============================================
 // Mini-grid aleatório
 // ===============================================
+// MINI-GRID ALEATÓRIO DE ARTIGOS (Finalizado)
 async function renderMiniArticlesRandom(list, targetMini, maxItems = 3) {
   const mini = document.querySelector(targetMini);
   mini.innerHTML = "";
 
-  // Coleta todos os artigos
-  let allArticles = [];
-  for (let person of list) {
-    if (!person.links.Substack) continue;
+  const allArticles = [];
+
+  // Coleta todos os artigos de todos os autores
+  for (const person of list) {
+    if (!person.links?.Substack) continue;
+
     const articles = await fetchSubstackArticles(person.links.Substack);
-    articles.forEach(article => allArticles.push({ person, article }));
-  }
 
-  // Embaralha os artigos
-  allArticles.sort(() => Math.random() - 0.5);
-
-  // Seleciona até maxItems artigos
-  let selected = allArticles.slice(0, maxItems);
-
-  // Se tiver menos que maxItems, preenche com placeholders
-  while (selected.length < maxItems) {
-    selected.push({ 
-      person: { name: "", img: "./public/icons/default.jpg" }, 
-      article: { title: "" } 
+    articles.forEach((article) => {
+      allArticles.push({ person, article });
     });
   }
 
-  // Renderiza os cards
+  // Embaralha
+  const shuffled = allArticles.sort(() => Math.random() - 0.5);
+
+  // Seleciona os primeiros
+  let selected = shuffled.slice(0, maxItems);
+
+  // Fallback para preencher espaços vazios
+  while (selected.length < maxItems) {
+    selected.push({
+      person: {
+        name: "Aguarde novos artigos",
+        img: "./public/icons/default.jpg"
+      },
+      article: {
+        title: "Sem conteúdo disponível",
+        link: "#"
+      }
+    });
+  }
+
+  // Renderiza
   selected.forEach(({ person, article }) => {
-    mini.innerHTML += `
+    mini.insertAdjacentHTML(
+      "beforeend",
+      `
       <div class="person hidden">
-        <img src="${person.img}" alt="${person.name || "placeholder"}">
-        <span>${article.title || person.name}</span>
+        <img src="${person.img}" alt="${person.name}">
+        <span>${article.title}</span>
       </div>
-    `;
+      `
+    );
   });
 
-  // Aplica animação fade-in
-  mini.querySelectorAll(".person").forEach(el => {
-    el.classList.add("hidden");
-    setTimeout(() => el.classList.add("show"), 50);
-  });
+  // Ativa animação
+  mini.querySelectorAll(".hidden").forEach((el) => observer.observe(el));
 }
-
 
 // ===============================================
 // Renderização das seções
@@ -149,14 +207,23 @@ function renderSection(list, targetMini, targetFull) {
   const mini = document.querySelector(targetMini);
   const full = document.querySelector(targetFull);
 
-  list.forEach(person => full.innerHTML += createFullPersonHTML(person));
+  list.forEach((person) => {
+    full.insertAdjacentHTML("beforeend", createFullPersonHTML(person));
+  });
 
   function updateMini() {
     mini.innerHTML = "";
-    const selected = list.length <= 3 ? [...list] : [...list].sort(() => Math.random() - 0.5).slice(0, 3);
-    selected.forEach(person => mini.innerHTML += createPersonHTML(person));
-    mini.querySelectorAll(".person").forEach(el => {
-      el.classList.add("hidden");
+
+    const selected =
+      list.length <= 3
+        ? [...list]
+        : [...list].sort(() => Math.random() - 0.5).slice(0, 3);
+
+    selected.forEach((person) => {
+      mini.insertAdjacentHTML("beforeend", createPersonHTML(person));
+    });
+
+    mini.querySelectorAll(".person").forEach((el) => {
       setTimeout(() => el.classList.add("show"), 50);
     });
   }
@@ -168,21 +235,29 @@ function renderSection(list, targetMini, targetFull) {
 // ===============================================
 // Observer para fade-in
 // ===============================================
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.2 });
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
 
 // ===============================================
 // Renderiza tudo
 // ===============================================
-renderSection(hubData.producao, "#mini-producao", "#lista-producao");
-renderSection(hubData.portavoze, "#mini-portavoze", "#lista-portavoze");
-renderSection(hubData.plataformas, "#mini-plataformas", "#lista-plataformas");
-renderArticlesRSS(hubData.producao, "#lista-artigos");
-//renderMiniArticlesRandom(hubData.producao, "#mini-producao", 4);
+async function renderAll() {
+  const hubData = await loadDB();
 
+  renderSection(hubData.producao, "#mini-producao", "#lista-producao");
+  renderSection(hubData.portavoze, "#mini-portavoze", "#lista-portavoze");
+  renderSection(hubData.plataformas, "#mini-plataformas", "#lista-plataformas");
+
+  renderArticlesRSS(hubData.producao, "#lista-artigos");
+}
+
+renderAll();

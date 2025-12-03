@@ -4,56 +4,80 @@
       "name": "Zer0",
       "img": "./public/persons/zer0g0ld.png",
       "links": {
-        "Substack": "https://zer0g0ld.substack.com/"
+        "Substack": {
+          "url": "https://zer0g0ld.substack.com/",
+          "type": "domain"
+        }
       }
     },
     {
       "name": "Staan Marsh",
       "img": "./public/persons/Staan_Marsh.png",
       "links": {
-        "Substack": "https://substack.com/@adson02"
+        "Substack": {
+          "url": "https://substack.com/@adson02",
+          "type": "profile"
+        }
       }
     },
     {
       "name": "Noir",
       "img": "./public/persons/Noir.png",
       "links": {
-        "Substack": "https://substack.com/@noiret"
+        "Substack": {
+          "url": "https://substack.com/@noiret",
+          "type": "profile"
+        }
       }
     },
     {
       "name": "Arnando Leal",
       "img": "./public/persons/Armando_Leal.png",
       "links": {
-        "Substack": "https://substack.com/@historiacontraataca"
+        "Substack": {
+          "url": "https://substack.com/@historiacontraataca",
+          "type": "profile"
+        }
       }
     },
     {
       "name": "Luciano LS",
       "img": "./public/persons/Luciano_LS.png",
       "links": {
-        "Substack": "https://substack.com/@lucianols"
+        "Substack": {
+          "url": "https://substack.com/@lucianols",
+          "type": "profile"
+        }
       }
     },
     {
       "name": "Gabriel C. Tavares",
       "img": "./public/persons/Gabriel_C_Tavares.png",
       "links": {
-        "Substack": "https://substack.com/@quietbiel93"
+        "Substack": {
+          "url": "https://substack.com/@quietbiel93",
+          "type": "profile"
+        }
       }
     },
     {
       "name": "Francielly Stempkowski",
       "img": "./public/persons/Francielly_Stempkowski.png",
       "links": {
-        "Substack": "https://substack.com/@stempkowski"
+        "Substack": {
+          "url": "https://substack.com/@stempkowski",
+          "type": "profile"
+        }
       }
     },
     {
       "name": "Cristian Brocca",
       "img": "./public/persons/Cristian_Brocca.png",
       "links": {
-        "Substack": "https://substack.com/@cristianbrocca"
+        "Substack": {
+          "url": "https://substack.com/@cristianbrocca",
+          "type": "profile"
+        }
       }
     }
   ],
