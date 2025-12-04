@@ -1,6 +1,7 @@
-// ===============================================
-// CONTROLE DE TEMA (Light/Dark)
-// ===============================================
+// src/ui.js — Módulo UI
+// Versão modular de script.js
+
+// Controle de tema (Light/Dark)
 document.addEventListener('DOMContentLoaded', () => {
   const themeToggle = document.getElementById('themeToggle');
   const themeIcon = document.querySelector('.theme-icon');
@@ -34,27 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// ===============================================
-// 🚀 INICIALIZAÇÃO COM NOVOS MÓDULOS
-// ===============================================
-// As classes são instanciadas e disponibilizadas globalmente
-// em modules.js, então não precisamos declarar aqui novamente
-// Elas estão disponíveis como: window.dataManager, window.TemplateEngine, window.searchFilter
+// Nota: por ora ainda usamos as instâncias globais expostas por modules.js
+// Futuramente iremos importar diretamente das classes em `src/`.
 
-// Se precisar usar localmente:
-// const { dataManager, templateEngine, searchFilter } = window;
-
-// ===============================================
-// 📰 SISTEMA DE RSS DO SUBSTACK
-// ===============================================
-// Proxy CORS - allorigins (confiável)
 const CORS_PROXY = 'https://api.allorigins.win/raw?url=';
 
-/**
- * Busca conteúdo RSS usando proxy CORS
- * @param {string} rssUrl - URL do feed RSS
- * @returns {Promise<string|null>} - Conteúdo XML ou null se falhar
- */
 async function fetchRSSWithCORS(rssUrl) {
   try {
     const proxyUrl = CORS_PROXY + encodeURIComponent(rssUrl);
@@ -67,34 +52,24 @@ async function fetchRSSWithCORS(rssUrl) {
   }
 }
 
-/**
- * Converte XML RSS em array de artigos
- * @param {string} xmlText - Conteúdo XML do feed
- * @param {number} limit - Quantos artigos extrair (padrão: 3)
- * @returns {Array} - Array de artigos com title, link, pubDate, description
- */
 function parseRSSItems(xmlText, limit = 3) {
   if (!xmlText) return [];
-  
   try {
     const parser = new DOMParser();
     const xmlDoc = parser.parseFromString(xmlText, "text/xml");
-    
     if (xmlDoc.getElementsByTagName("parsererror").length > 0) {
       console.error("Erro ao fazer parse do XML RSS");
       return [];
     }
-    
+
     const items = xmlDoc.getElementsByTagName("item");
     const articles = [];
-    
     for (let i = 0; i < Math.min(items.length, limit); i++) {
       const item = items[i];
       const title = item.getElementsByTagName("title")[0]?.textContent || "Sem título";
       const link = item.getElementsByTagName("link")[0]?.textContent || "";
       const pubDate = item.getElementsByTagName("pubDate")[0]?.textContent || "";
       const description = item.getElementsByTagName("description")[0]?.textContent || "";
-      
       articles.push({
         title,
         link,
@@ -102,7 +77,7 @@ function parseRSSItems(xmlText, limit = 3) {
         description: description.substring(0, 150) + (description.length > 150 ? "..." : "")
       });
     }
-    
+
     return articles;
   } catch (e) {
     console.error("Erro ao fazer parse do RSS:", e);
@@ -110,17 +85,10 @@ function parseRSSItems(xmlText, limit = 3) {
   }
 }
 
-/**
- * Busca artigos do Substack de um colaborador
- * @param {Object} substackObj - Objeto com type e url
- * @returns {Promise<Array>} - Array com até 3 artigos
- */
 async function fetchSubstackArticles(substackObj) {
   if (!substackObj) return [];
-  
   try {
     let domain = null;
-    
     if (substackObj.type === "domain") {
       domain = substackObj.url.replace(/^(https?:\/\/)?/, '').replace(/\/$/, '');
     } else if (substackObj.type === "profile") {
@@ -129,15 +97,12 @@ async function fetchSubstackArticles(substackObj) {
         domain = `${match[1]}.substack.com`;
       }
     }
-    
     if (!domain) return [];
-    
-    // Tenta RSS2JSON primeiro
+
     try {
       const rssUrl = `https://${domain}/feed`;
       const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
       const res = await fetch(apiUrl, { mode: 'cors' });
-      
       if (res.ok) {
         const data = await res.json();
         if (data.items && data.items.length > 0) {
@@ -152,8 +117,7 @@ async function fetchSubstackArticles(substackObj) {
     } catch (e) {
       console.warn(`RSS2JSON falhou para ${domain}, tentando feed direto...`);
     }
-    
-    // Fallback com CORS
+
     try {
       const rssUrl = `https://${domain}/feed`;
       const xmlText = await fetchRSSWithCORS(rssUrl);
@@ -168,30 +132,18 @@ async function fetchSubstackArticles(substackObj) {
   }
 }
 
-// ===============================================
-// RENDERIZAÇÃO COM TEMPLATE ENGINE
-// ===============================================
-/**
- * Renderiza uma seção (mini-grid + lista completa)
- * @param {Array} people - Lista de pessoas
- * @param {string} targetMini - Seletor do mini-grid
- * @param {string} targetFull - Seletor da lista completa
- */
 function renderSection(people, targetMini, targetFull) {
   const miniContainer = document.querySelector(targetMini);
   const fullContainer = document.querySelector(targetFull);
   const te = window.TemplateEngine;
 
-  // Renderiza lista completa
   people.forEach((person) => {
     const html = te.renderPerson(person, 'full');
     fullContainer.insertAdjacentHTML("beforeend", html);
   });
 
-  // Atualiza mini-grid a cada 15s
   function updateMini() {
     miniContainer.innerHTML = "";
-    
     const selected = people.length <= 3
       ? [...people]
       : [...people].sort(() => Math.random() - 0.5).slice(0, 3);
@@ -210,11 +162,6 @@ function renderSection(people, targetMini, targetFull) {
   if (people.length > 3) setInterval(updateMini, 15000);
 }
 
-/**
- * Renderiza artigos RSS do Substack
- * @param {Array} people - Lista de pessoas com links
- * @param {string} target - Seletor do container
- */
 async function renderArticlesRSS(people, target) {
   const container = document.querySelector(target);
 
@@ -244,35 +191,25 @@ async function renderArticlesRSS(people, target) {
   container.querySelectorAll(".hidden").forEach((el) => window.observer.observe(el));
 }
 
-// ===============================================
-// RENDERIZAÇÃO PRINCIPAL
-// ===============================================
-/**
- * Carrega dados e renderiza todas as seções
- */
 async function renderAll() {
   try {
-    // Usa dataManager global de modules.js
     const dm = window.dataManager;
     const te = window.TemplateEngine;
 
-      if (!dm || !te) {
-        throw new Error("dataManager ou TemplateEngine não estão prontos");
-      }
+    if (!dm || !te) {
+      throw new Error("dataManager ou TemplateEngine não estão prontos");
+    }
 
-    // Carrega dados usando DataManager
     await dm.load();
 
     const producao = dm.data.producao || [];
     const portavoze = dm.data.portavoze || [];
     const plataformas = dm.data.plataformas || [];
 
-    // Renderiza seções
     renderSection(producao, "#mini-producao", "#lista-producao");
     renderSection(portavoze, "#mini-portavoze", "#lista-portavoze");
     renderSection(plataformas, "#mini-plataformas", "#lista-plataformas");
 
-    // Renderiza artigos RSS
     renderArticlesRSS(producao, "#lista-artigos");
 
     console.log("✅ Renderização concluída com sucesso");
@@ -283,10 +220,8 @@ async function renderAll() {
 
 // Aguarda que modules.js tenha inicializado antes de renderizar
 document.addEventListener('DOMContentLoaded', async () => {
-  // Aguarda que dataManager esteja pronto
   if (!window.dataManager) {
     console.warn("⏳ Aguardando inicialização de dataManager...");
-    // Aguarda até que esteja pronto (máximo 5 segundos)
     for (let i = 0; i < 50; i++) {
       if (window.dataManager) break;
       await new Promise(resolve => setTimeout(resolve, 100));

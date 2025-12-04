@@ -1,3 +1,231 @@
+:root {
+  /* ========================= */
+  /*       CORES PRIMÁRIAS     */
+  /* ========================= */
+  --color-gold: #f5dca1;
+  --color-gold-light: #f0e8d2;
+  --color-gold-soft: #f3dca0;
+  --color-gold-pale: #f3ecdb;
+  --color-gold-bright: #f6ddb1;
+  --color-gold-warm: #f3d992;
+  --color-gold-accent: gold;
+  
+  /* ========================= */
+  /*       CORES BACKGROUND    */
+  /* ========================= */
+  --color-bg-dark: #0b0b0b;
+  --color-bg-black: #000;
+  --color-bg-gradient-start: #d7bf82;
+  --color-bg-gradient-end: #0b0b0b;
+  
+  /* ========================= */
+  /*    CORES TRANSPARÊNCIAS   */
+  /* ========================= */
+  --color-white-08: rgba(255, 255, 255, 0.08);
+  --color-white-13: rgba(255, 255, 255, 0.13);
+  --color-white-15: rgba(255, 255, 255, 0.15);
+  --color-white-22: rgba(255, 255, 255, 0.22);
+  --color-white-28: rgba(255, 255, 255, 0.28);
+  --color-white-07: rgba(255, 255, 255, 0.07);
+  --color-white-18: rgba(255, 255, 255, 0.18);
+  --color-black-25: rgba(0, 0, 0, 0.25);
+  --color-black-30: rgba(0, 0, 0, 0.3);
+  --color-black-35: rgba(0, 0, 0, 0.35);
+  --color-black-40: rgba(0, 0, 0, 0.4);
+  --color-black-45: rgba(0, 0, 0, 0.45);
+  --color-black-55: rgba(0, 0, 0, 0.55);
+  --color-gold-25: rgba(230, 200, 130, 0.25);
+  --color-gold-38: rgba(230, 200, 130, 0.38);
+  --color-gold-highlight: rgba(255, 225, 160, 0.6);
+  --color-gold-highlight-45: rgba(255, 225, 160, 0.45);
+  --color-gold-highlight-40: rgba(255, 230, 160, 0.4);
+  --color-gold-highlight-35: rgba(255, 220, 150, 0.35);
+  
+  /* ========================= */
+  /*      CORES DE BORDAS      */
+  /* ========================= */
+  --color-border-gold: #e9cd7a;
+  --color-border-gold-light: #e5c886;
+  --color-border-gold-softer: #f0d89b;
+  --color-border-gold-muted: #e6c677;
+  --color-border-gold-pale: #d4b875;
+  
+  /* ========================= */
+  /*       TIPOGRAFIA          */
+  /* ========================= */
+  --font-family-serif: "Times New Roman", serif;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* ========================= */
+  /*       TAMANHOS FONTE      */
+  /* ========================= */
+  --font-size-title: 58px;
+  --font-size-motto: 14px;
+  --font-size-subtitle: 18px;
+  --font-size-section-title: 34px;
+  --font-size-intro: 19px;
+  --font-size-col-title: 25px;
+  --font-size-person: 17px;
+  --font-size-link-btn: 14px;
+  --font-size-btn: 15px;
+  --font-size-fp-strong: 20px;
+  --font-size-full-h2: 30px;
+  
+  /* Responsivo */
+  --font-size-title-tablet: 40px;
+  --font-size-title-mobile: 32px;
+  --font-size-motto-mobile: 11px;
+  --font-size-section-title-mobile: 26px;
+  --font-size-person-mobile: 15px;
+  
+  /* ========================= */
+  /*      ESPAÇAMENTOS        */
+  /* ========================= */
+  --spacing-xs: 4px;
+  --spacing-sm: 6px;
+  --spacing-base: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 14px;
+  --spacing-xl: 16px;
+  --spacing-2xl: 18px;
+  --spacing-3xl: 20px;
+  --spacing-4xl: 24px;
+  --spacing-5xl: 28px;
+  --spacing-6xl: 30px;
+  --spacing-7xl: 32px;
+  --spacing-8xl: 38px;
+  --spacing-9xl: 40px;
+  --spacing-10xl: 48px;
+  --spacing-11xl: 50px;
+  --spacing-12xl: 80px;
+  
+  /* ========================= */
+  /*      LETTER SPACING       */
+  /* ========================= */
+  --letter-spacing-title: 3.5px;
+  --letter-spacing-motto: 3px;
+  --letter-spacing-section: 1.2px;
+  --letter-spacing-btn: 1px;
+  --letter-spacing-motto-mobile: 2px;
+  
+  /* ========================= */
+  /*       DIMENSÕES           */
+  /* ========================= */
+  --size-selo: 72px;
+  --size-selo-mobile: 60px;
+  --size-person-avatar: 62px;
+  --size-full-person-avatar: 74px;
+  --size-col-max: 300px;
+  --size-section-max: 970px;
+  --size-intro-max: 860px;
+  --size-subtitle-max: 720px;
+  
+  /* ========================= */
+  /*     BORDER RADIUS         */
+  /* ========================= */
+  --radius-circle: 50%;
+  --radius-sm: 14px;
+  --radius-md: 18px;
+  --radius-full: 40px;
+  --radius-pill: 20px;
+  
+  /* ========================= */
+  /*   TRANSIÇÕES E EFEITOS    */
+  /* ========================= */
+  --transition-fast: 0.25s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.35s ease;
+  
+  /* ========================= */
+  /*      SOMBRAS              */
+  /* ========================= */
+  --shadow-sm: 0 0 6px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 0 8px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 0 10px rgba(0, 0, 0, 0.25);
+  --shadow-xl: 0 0 12px rgba(0, 0, 0, 0.35);
+  --shadow-2xl: 0 0 14px rgba(255, 220, 150, 0.35);
+  --shadow-text: 0 0 12px rgba(0, 0, 0, 0.4);
+  --shadow-text-sm: 0 0 6px rgba(0, 0, 0, 0.3);
+  --shadow-text-md: 0 0 8px rgba(0, 0, 0, 0.4);
+  --shadow-text-lg: 0 0 10px rgba(0, 0, 0, 0.35);
+  --shadow-drop: drop-shadow(0 0 7px rgba(0, 0, 0, 0.55));
+  --shadow-drop-hover: drop-shadow(0 0 12px rgba(255, 225, 160, 0.6));
+  
+  /* ========================= */
+  /*      LINE HEIGHT          */
+  /* ========================= */
+  --line-height-default: 1.65;
+  --line-height-subtitle: 1.75;
+  --line-height-intro: 1.82;
+  
+  /* ========================= */
+  /*       OPACIDADE           */
+  /* ========================= */
+  --opacity-high: 0.95;
+  --opacity-medium: 0.9;
+  --opacity-soft: 0.85;
+}
+
+/* ========================= */
+/*      TEMA ESCURO (DARK)    */
+/* ========================= */
+
+[data-theme="dark"] {
+  /* ========================= */
+  /*       CORES PRIMÁRIAS     */
+  /* ========================= */
+  --color-gold: #c9a961;
+  --color-gold-light: #d4b896;
+  --color-gold-soft: #bfa155;
+  --color-gold-pale: #c4a968;
+  --color-gold-bright: #d1b17f;
+  --color-gold-warm: #b89b4f;
+  --color-gold-accent: #c9a961;
+  
+  /* ========================= */
+  /*       CORES BACKGROUND    */
+  /* ========================= */
+  --color-bg-dark: #1a1a1a;
+  --color-bg-black: #0f0f0f;
+  --color-bg-gradient-start: #7f6b37;
+  --color-bg-gradient-end: #0f0f0f;
+  
+  /* ========================= */
+  /*    CORES TRANSPARÊNCIAS   */
+  /* ========================= */
+  --color-white-08: rgba(50, 50, 50, 0.08);
+  --color-white-13: rgba(80, 80, 80, 0.13);
+  --color-white-15: rgba(80, 80, 80, 0.15);
+  --color-white-22: rgba(60, 60, 60, 0.22);
+  --color-white-28: rgba(70, 70, 70, 0.28);
+  --color-white-07: rgba(40, 40, 40, 0.07);
+  --color-white-18: rgba(50, 50, 50, 0.18);
+  --color-black-25: rgba(255, 255, 255, 0.05);
+  --color-black-30: rgba(255, 255, 255, 0.08);
+  --color-black-35: rgba(255, 255, 255, 0.12);
+  --color-black-40: rgba(255, 255, 255, 0.15);
+  --color-black-45: rgba(255, 255, 255, 0.18);
+  --color-black-55: rgba(255, 255, 255, 0.22);
+  --color-gold-25: rgba(201, 169, 97, 0.15);
+  --color-gold-38: rgba(201, 169, 97, 0.25);
+  --color-gold-highlight: rgba(201, 169, 97, 0.3);
+  --color-gold-highlight-45: rgba(201, 169, 97, 0.25);
+  --color-gold-highlight-40: rgba(201, 169, 97, 0.2);
+  --color-gold-highlight-35: rgba(201, 169, 97, 0.18);
+  
+  /* ========================= */
+  /*      CORES DE BORDAS      */
+  /* ========================= */
+  --color-border-gold: #8b7d5f;
+  --color-border-gold-light: #7a7050;
+  --color-border-gold-softer: #9a8f6f;
+  --color-border-gold-muted: #7d7559;
+  --color-border-gold-pale: #6b6350;
+}
+
 /* ========================= */
 /*        BASE GLOBAL        */
 /* ========================= */

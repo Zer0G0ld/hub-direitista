@@ -1,3 +1,10 @@
+# 📊 Exemplo de db.json Melhorado
+
+Este arquivo mostra como seu `db.json` ficaria com as melhorias propostas.
+
+## ✨ Versão Melhorada Completa
+
+```json
 {
   "metadata": {
     "version": "2.0",
@@ -27,8 +34,13 @@
         "Substack": {
           "url": "@zer0g0ld",
           "type": "profile",
-          "icon": "substack",
           "label": "Newsletter"
+        },
+        "Twitter": {
+          "url": "https://twitter.com/zer0g0ld",
+          "type": "external",
+          "icon": "twitter",
+          "label": "Twitter"
         },
         "GitHub": {
           "url": "https://github.com/Zer0G0ld",
@@ -37,7 +49,7 @@
           "label": "GitHub"
         },
         "Website": {
-          "url": "https://zerodev-blush.vercel.app/",
+          "url": "https://zer0g0ld.dev",
           "type": "external",
           "icon": "globe",
           "label": "Website"
@@ -64,8 +76,12 @@
       "links": {
         "Substack": {
           "url": "@adson02",
-          "type": "profile",
-          "icon": "substack"
+          "type": "profile"
+        },
+        "Twitter": {
+          "url": "https://twitter.com/adson02",
+          "type": "external",
+          "icon": "twitter"
         },
         "YouTube": {
           "url": "https://youtube.com/@staanmarsh",
@@ -92,8 +108,12 @@
       "links": {
         "Substack": {
           "url": "@noiret",
-          "type": "profile",
-          "icon": "substack"
+          "type": "profile"
+        },
+        "Twitter": {
+          "url": "https://twitter.com/noiret",
+          "type": "external",
+          "icon": "twitter"
         }
       }
     },
@@ -115,8 +135,12 @@
       "links": {
         "Substack": {
           "url": "@historiacontraataca",
-          "type": "profile",
-          "icon": "substack"
+          "type": "profile"
+        },
+        "Twitter": {
+          "url": "https://twitter.com/historiacontra",
+          "type": "external",
+          "icon": "twitter"
         },
         "Blog": {
           "url": "https://historiacontraataca.com",
@@ -143,8 +167,12 @@
       "links": {
         "Substack": {
           "url": "@lucianols",
-          "type": "profile",
-          "icon": "substack"
+          "type": "profile"
+        },
+        "Twitter": {
+          "url": "https://twitter.com/lucianols",
+          "type": "external",
+          "icon": "twitter"
         },
         "YouTube": {
           "url": "https://youtube.com/@lucianols",
@@ -171,8 +199,17 @@
       "links": {
         "Substack": {
           "url": "@quietbiel93",
-          "type": "profile",
-          "icon": "substack"
+          "type": "profile"
+        },
+        "Twitter": {
+          "url": "https://twitter.com/quietbiel93",
+          "type": "external",
+          "icon": "twitter"
+        },
+        "TikTok": {
+          "url": "https://tiktok.com/@gabriel.tavares",
+          "type": "external",
+          "icon": "tiktok"
         }
       }
     },
@@ -194,8 +231,17 @@
       "links": {
         "Substack": {
           "url": "@stempkowski",
-          "type": "profile",
-          "icon": "substack"
+          "type": "profile"
+        },
+        "Twitter": {
+          "url": "https://twitter.com/francielly_s",
+          "type": "external",
+          "icon": "twitter"
+        },
+        "Linkedin": {
+          "url": "https://linkedin.com/in/francielly",
+          "type": "external",
+          "icon": "linkedin"
         }
       }
     },
@@ -217,10 +263,13 @@
       "links": {
         "Substack": {
           "url": "@cristianbrocca",
-          "type": "profile",
-          "icon": "substack"
+          "type": "profile"
         },
-    
+        "Twitter": {
+          "url": "https://twitter.com/cbrocca",
+          "type": "external",
+          "icon": "twitter"
+        },
         "Instagram": {
           "url": "https://instagram.com/cristian.brocca",
           "type": "external",
@@ -254,6 +303,11 @@
           "url": "https://kick.com/brunodiaspr",
           "type": "external",
           "icon": "kick"
+        },
+        "Twitter": {
+          "url": "https://twitter.com/MidiaBH",
+          "type": "external",
+          "icon": "twitter"
         }
       }
     }
@@ -264,7 +318,7 @@
       "id": "aristocracia",
       "name": "Aristocracia",
       "description": "Comunidade privada de discussão e debates entre membros da direita",
-      "img": "./public/icons/png/aristocracia.png",
+      "img": "./public/icons/aristocracia.jpg",
       "color": "#3d3d3d",
       "featured": true,
       "members": 150,
@@ -320,3 +374,44 @@
     }
   ]
 }
+```
+
+---
+
+## 🎯 Principais Mudanças
+
+### ✅ Adicionado
+- ✨ `id` único em cada membro (para URLs e queries)
+- 📝 `bio` descritiva (breve resumo)
+- 👤 `role` (função/cargo)
+- 🎨 `color` (cor personalizada)
+- ⭐ `featured` (destaque na página)
+- 📅 `joinDate` (data de entrada)
+- 📊 `stats` (estatísticas)
+- 🏷️ `tags` (palavras-chave)
+- ✔️ `verified` (verificado)
+- 🔗 Links com estrutura padronizada
+
+### 📁 Novas Seções
+- 🎉 `eventos` - Eventos e encontros
+- 🚀 `projetos` - Projetos da comunidade
+- 📚 `recursos` - Guias, cursos, leitura recomendada
+
+### 🔧 Melhorias de Estrutura
+- Padronização de links (todos com `type`, `icon`, `label`)
+- Metadata geral do banco
+- Cores consistentes para cada pessoa
+
+---
+
+## 🚀 Próximos Passos
+
+1. **Copie este exemplo** para seu `db.json`
+2. **Adapte os dados** (bios, links, stats reais)
+3. **Valide o JSON** em [jsonlint.com](https://jsonlint.com)
+4. **Teste a aplicação** para verificar se tudo funciona
+5. **Crie versão 2.0** do seu banco de dados!
+
+---
+
+**Quer que eu implemente estas mudanças diretamente no seu db.json? 🚀**

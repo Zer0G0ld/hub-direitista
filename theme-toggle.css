@@ -1,0 +1,75 @@
+/* ========================= */
+/*   CONTROLE DE TEMA        */
+/* ========================= */
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: var(--color-white-08);
+  border: 1px solid var(--color-white-22);
+  border-radius: var(--radius-full);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--color-gold);
+  backdrop-filter: blur(6px);
+  box-shadow: var(--shadow-md);
+}
+
+.theme-toggle:hover {
+  background: var(--color-white-15);
+  border-color: var(--color-white-28);
+  box-shadow: var(--shadow-xl);
+  transform: scale(1.05);
+}
+
+.theme-toggle-label {
+  font-size: 12px;
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: none;
+}
+
+/* Mostrar label em telas maiores */
+@media (min-width: 768px) {
+  .theme-toggle-label {
+    display: inline;
+  }
+}
+
+/* Animação suave de transição ao trocar tema */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
+}
+
+/* Evitar transição em elementos específicos */
+img,
+video,
+canvas {
+  transition: none !important;
+}
+
+/* ========================= */
+/*   TEMA ESCURO - AJUSTES   */
+/* ========================= */
+
+[data-theme="dark"] body {
+  background: radial-gradient(circle at top, var(--color-bg-gradient-start) 0%, var(--color-bg-gradient-end) 75%);
+}
+
+[data-theme="dark"] .theme-toggle {
+  background: var(--color-white-08);
+  border-color: var(--color-white-22);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+  background: var(--color-white-13);
+  border-color: var(--color-white-28);
+}
