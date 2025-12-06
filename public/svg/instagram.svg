@@ -1,0 +1,27 @@
+<svg width="24" height="24" viewBox="0 0 24 24" role="img" aria-label="Instagram"
+xmlns="http://www.w3.org/2000/svg"
+stroke="url(#instaGradient)"
+stroke-width="1.6"
+stroke-linecap="round"
+stroke-linejoin="round"
+fill="none">
+
+  <defs>
+    <linearGradient id="instaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEDA75"/>   <!-- Amarelo -->
+      <stop offset="25%" stop-color="#FA7E1E"/>  <!-- Laranja -->
+      <stop offset="50%" stop-color="#D62976"/>  <!-- Rosa -->
+      <stop offset="75%" stop-color="#962FBF"/>  <!-- Roxo -->
+      <stop offset="100%" stop-color="#4F5BD5"/> <!-- Azul/Roxo -->
+    </linearGradient>
+  </defs>
+
+  <!-- Moldura -->
+  <rect x="3.5" y="3.5" width="17" height="17" rx="4.2" ry="4.2" />
+
+  <!-- Câmera -->
+  <circle cx="12" cy="12" r="3.2" />
+
+  <!-- Flash -->
+  <circle cx="17.2" cy="6.8" r="0.7" fill="url(#instaGradient)" stroke="none" />
+</svg>

@@ -1,0 +1,16 @@
+<svg width="24" height="24" viewBox="0 0 24 24" role="img" aria-label="YouTube"
+xmlns="http://www.w3.org/2000/svg"
+fill="none"
+stroke="#FF0000"
+stroke-width="1.6"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+  <title>YouTube</title>
+
+  <!-- Retângulo vermelho -->
+  <rect x="2.2" y="5" width="19.6" height="14" rx="3.2" ry="3.2" fill="#FF0000" stroke="#FF0000" />
+
+  <!-- Botão play branco -->
+  <path d="M10 9.5v5l4-2.5-4-2.5z" fill="#FFFFFF" stroke="none" />
+</svg>
