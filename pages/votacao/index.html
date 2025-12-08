@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="../../public/icons/favicon.ico" />
+  <title>Hub Direitista | Votação Chaveada</title>
+  <link rel="stylesheet" href="../../globals.css" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="./votacao.css" />
+  <script src="./votacao.js" defer type="module"></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <h1 class="title">
+      <span class="title-motto">VOTAÇÃO CHAVEADA</span>
+      HUB DIREITISTA
+      <img src="../../public/icons/selo.svg" alt="Selo O Futuro é Glorioso" class="selo" />
+    </h1>
+
+    <p class="subtitle">
+      Sistema de votação programada. Novos artigos são liberados gradualmente conforme o calendário.
+      Vote nos artigos do dia e acompanhe a evolução das ideias.
+    </p>
+  </header>
+
+  <!-- CALENDÁRIO DE VOTAÇÃO -->
+  <section class="calendar-section section">
+    <h2 class="section-title">Calendário de Votação</h2>
+    
+    <div class="calendar-container">
+      <div class="calendar-nav">
+        <button id="prev-week" class="calendar-nav-btn">← Semana Anterior</button>
+        <h3 id="current-week-display">Semana 1</h3>
+        <button id="next-week" class="calendar-nav-btn">Próxima Semana →</button>
+      </div>
+      
+      <div class="calendar-grid" id="calendar-grid">
+        <!-- Dias serão gerados dinamicamente -->
+      </div>
+      
+      <div class="calendar-info">
+        <p>📅 <strong>Cronograma:</strong> 2 artigos por dia • 4 semanas • Total: 20 artigos</p>
+        <p>⏳ Cada artigo fica disponível para votação por 7 dias</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTIGOS DO DIA -->
+  <section class="daily-section section">
+    <h2 class="section-title">
+      <span id="day-title">Artigos de Hoje</span>
+      <small id="day-subtitle" class="day-subtitle"></small>
+    </h2>
+    
+    <div class="day-indicator">
+      <div class="day-indicator-item active">
+        <span class="day-number">Dia 1</span>
+        <span class="day-date" id="day1-date"></span>
+      </div>
+      <div class="day-indicator-item">
+        <span class="day-number">Dia 2</span>
+        <span class="day-date" id="day2-date"></span>
+      </div>
+      <div class="day-indicator-item">
+        <span class="day-number">Dia 3</span>
+        <span class="day-date" id="day3-date"></span>
+      </div>
+      <div class="day-indicator-item">
+        <span class="day-number">Dia 4</span>
+        <span class="day-date" id="day4-date"></span>
+      </div>
+    </div>
+    
+    <div id="daily-articles" class="daily-articles">
+      <!-- Artigos do dia serão carregados aqui -->
+    </div>
+    
+    <div id="no-articles-today" class="no-articles hidden">
+      <div class="lock-icon">🔒</div>
+      <h3>Nenhum artigo disponível hoje</h3>
+      <p>Os artigos deste dia serão liberados conforme o calendário.</p>
+    </div>
+  </section>
+
+  <!-- VISUALIZADOR DE ARTIGO -->
+  <div id="article-modal" class="article-modal hidden">
+    <div class="modal-content">
+      <button id="close-modal" class="modal-close">×</button>
+      <div id="modal-article-content">
+        <!-- Conteúdo do artigo será carregado aqui -->
+      </div>
+      <div class="modal-vote-section">
+        <div class="modal-vote-count">
+          <span id="modal-votes">0</span> votos
+        </div>
+        <button id="modal-vote-btn" class="btn modal-vote-btn">
+          ↑ Votar neste Artigo
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ARTIGOS ANTERIORES -->
+  <section class="previous-section section">
+    <h2 class="section-title">Artigos Anteriores</h2>
+    
+    <div class="week-selector">
+      <button class="week-btn active" data-week="all">Todos</button>
+      <button class="week-btn" data-week="1">Semana 1</button>
+      <button class="week-btn" data-week="2">Semana 2</button>
+      <button class="week-btn" data-week="3">Semana 3</button>
+      <button class="week-btn" data-week="4">Semana 4</button>
+    </div>
+    
+    <div id="previous-articles" class="previous-articles">
+      <!-- Artigos anteriores serão carregados aqui -->
+    </div>
+  </section>
+
+  <!-- RANKING GERAL -->
+  <section class="ranking-section section">
+    <h2 class="section-title">Ranking Geral</h2>
+    
+    <div class="ranking-container">
+      <div class="ranking-card gold">
+        <div class="ranking-medal">🥇</div>
+        <div id="first-place" class="ranking-info">
+          <h3>1º Lugar</h3>
+          <p class="ranking-title">Carregando...</p>
+          <p class="ranking-author">Autor</p>
+          <p class="ranking-votes">0 votos</p>
+        </div>
+      </div>
+      
+      <div class="ranking-card silver">
+        <div class="ranking-medal">🥈</div>
+        <div id="second-place" class="ranking-info">
+          <h3>2º Lugar</h3>
+          <p class="ranking-title">Carregando...</p>
+          <p class="ranking-author">Autor</p>
+          <p class="ranking-votes">0 votos</p>
+        </div>
+      </div>
+      
+      <div class="ranking-card bronze">
+        <div class="ranking-medal">🥉</div>
+        <div id="third-place" class="ranking-info">
+          <h3>3º Lugar</h3>
+          <p class="ranking-title">Carregando...</p>
+          <p class="ranking-author">Autor</p>
+          <p class="ranking-votes">0 votos</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="ranking-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Posição</th>
+            <th>Artigo</th>
+            <th>Autor</th>
+            <th>Votos</th>
+            <th>Semana</th>
+          </tr>
+        </thead>
+        <tbody id="ranking-table-body">
+          <!-- Ranking será gerado aqui -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2024 Hub Direitista. Sistema de votação chaveada.</p>
+    <p class="footer-info">
+      <span id="current-date-display"></span> • 
+      <span id="articles-available"></span> artigos disponíveis • 
+      <span id="total-votes-display"></span> votos totais
+    </p>
+    <p class="footer-links">
+      <a href="../../index.html">← Voltar para Home</a>
+    </p>
+  </footer>
+
+</body>
+</html>

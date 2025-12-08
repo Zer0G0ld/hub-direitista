@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="../../public/icons/favicon.ico" />
+  <title>Hub Direitista | Leitura</title>
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="./artigo.css" />
+  <script src="./artigo.js" defer type="module"></script>
+</head>
+<body>
+
+  <!-- HEADER FIXO -->
+  <header class="article-header">
+    <div class="header-container">
+      <a href="../../index.html" class="back-button">
+        ← Voltar ao Hub
+      </a>
+      
+      <div class="header-actions">
+        <div class="reading-progress">
+          <div class="progress-bar">
+            <div class="progress-fill" id="reading-progress"></div>
+          </div>
+          <span id="progress-text">0% lido</span>
+        </div>
+        
+        <button id="theme-toggle" class="theme-btn" title="Alternar tema">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="article-container">
+    
+    <!-- CABEÇALHO DO ARTIGO -->
+    <article class="article-content">
+      <header class="article-header-content">
+        <div class="article-category" id="article-category">Política</div>
+        <h1 class="article-title" id="article-title">Carregando artigo...</h1>
+        
+        <div class="article-meta">
+          <div class="author-info">
+            <img id="author-image" src="" alt="" class="author-img">
+            <div>
+              <div class="author-name" id="author-name">Autor</div>
+              <div class="author-bio" id="author-bio">Biografia do autor</div>
+            </div>
+          </div>
+          
+          <div class="article-stats">
+            <div class="stat-item">
+              <span class="stat-icon">📅</span>
+              <span id="article-date">01 Jan 2024</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-icon">⏱️</span>
+              <span id="reading-time">5 min</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-icon">👁️</span>
+              <span id="article-views">0 visualizações</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- IMAGEM DE CAPA -->
+      <div class="article-cover">
+        <div class="cover-overlay">
+          <div class="cover-tags" id="cover-tags">
+            <!-- Tags serão inseridas aqui -->
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTEÚDO DO ARTIGO -->
+      <div class="article-body" id="article-body">
+        <!-- Conteúdo será carregado dinamicamente -->
+        <div class="loading-article">
+          <div class="spinner"></div>
+          <p>Carregando artigo...</p>
+        </div>
+      </div>
+
+      <!-- RODAPÉ DO ARTIGO -->
+      <footer class="article-footer">
+        <div class="vote-section-footer">
+          <div class="vote-info">
+            <div class="vote-count-large" id="vote-count">0</div>
+            <div class="vote-label">votos</div>
+          </div>
+          
+          <button id="article-vote-btn" class="vote-btn-large">
+            <span class="vote-icon">↑</span>
+            <span class="vote-text">Votar neste artigo</span>
+          </button>
+          
+          <div class="share-section">
+            <span class="share-label">Compartilhar:</span>
+            <div class="share-buttons">
+              <button class="share-btn" data-platform="twitter" title="Compartilhar no Twitter">
+                𝕏
+              </button>
+              <button class="share-btn" data-platform="whatsapp" title="Compartilhar no WhatsApp">
+                WhatsApp
+              </button>
+              <button class="share-btn" data-platform="telegram" title="Compartilhar no Telegram">
+                Telegram
+              </button>
+              <button class="share-btn" data-platform="copy" title="Copiar link">
+                🔗
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="article-navigation">
+          <a href="#" id="prev-article" class="nav-link prev-article">
+            ← Artigo anterior
+          </a>
+          <a href="../votacao/index.html" class="nav-link back-to-voting">
+            Voltar à votação
+          </a>
+          <a href="#" id="next-article" class="nav-link next-article">
+            Próximo artigo →
+          </a>
+        </div>
+      </footer>
+    </article>
+
+    <!-- BARRA LATERAL -->
+    <aside class="article-sidebar">
+      <!-- AUTOR -->
+      <div class="sidebar-card author-card">
+        <h3 class="sidebar-title">Sobre o Autor</h3>
+        <div class="author-details">
+          <img id="sidebar-author-img" src="" alt="" class="sidebar-author-img">
+          <div class="sidebar-author-info">
+            <h4 id="sidebar-author-name">Nome do Autor</h4>
+            <p id="sidebar-author-bio">Biografia do autor será carregada aqui.</p>
+            <a href="#" id="author-substack" class="author-link" target="_blank">
+              Ver no Substack →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ARTIGOS RELACIONADOS -->
+      <div class="sidebar-card related-articles">
+        <h3 class="sidebar-title">Artigos Relacionados</h3>
+        <div id="related-articles-list" class="related-list">
+          <!-- Artigos relacionados serão carregados aqui -->
+        </div>
+      </div>
+
+      <!-- ESTATÍSTICAS -->
+      <div class="sidebar-card stats-card">
+        <h3 class="sidebar-title">Estatísticas</h3>
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-number" id="total-words">0</div>
+            <div class="stat-label">palavras</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number" id="total-paragraphs">0</div>
+            <div class="stat-label">parágrafos</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number" id="popularity-score">0</div>
+            <div class="stat-label">popularidade</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAGS -->
+      <div class="sidebar-card tags-card">
+        <h3 class="sidebar-title">Tags</h3>
+        <div class="tags-list" id="sidebar-tags">
+          <!-- Tags serão carregadas aqui -->
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- MODAL DE VOTO CONFIRMADO -->
+  <div id="vote-confirm-modal" class="modal hidden">
+    <div class="modal-content small">
+      <div class="modal-icon">✓</div>
+      <h3 class="modal-title">Voto Registrado!</h3>
+      <p class="modal-text">Seu voto foi computado com sucesso.</p>
+      <button class="modal-close-btn">Continuar Leitura</button>
+    </div>
+  </div>
+
+  <!-- MODAL DE COMPARTILHAMENTO -->
+  <div id="share-modal" class="modal hidden">
+    <div class="modal-content">
+      <h3 class="modal-title">Compartilhar Artigo</h3>
+      <div class="share-options">
+        <button class="share-option-btn" data-platform="twitter">
+          <span class="share-option-icon">𝕏</span>
+          <span class="share-option-text">Twitter</span>
+        </button>
+        <button class="share-option-btn" data-platform="whatsapp">
+          <span class="share-option-icon">WhatsApp</span>
+          <span class="share-option-text">WhatsApp</span>
+        </button>
+        <button class="share-option-btn" data-platform="telegram">
+          <span class="share-option-icon">Telegram</span>
+          <span class="share-option-text">Telegram</span>
+        </button>
+        <button class="share-option-btn" data-platform="facebook">
+          <span class="share-option-icon">Facebook</span>
+          <span class="share-option-text">Facebook</span>
+        </button>
+        <button class="share-option-btn" data-platform="copy">
+          <span class="share-option-icon">🔗</span>
+          <span class="share-option-text">Copiar Link</span>
+        </button>
+      </div>
+      <div class="share-link">
+        <input type="text" id="share-url" readonly>
+        <button id="copy-url-btn" class="copy-btn">Copiar</button>
+      </div>
+      <button class="modal-close-btn">Cancelar</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="article-page-footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Hub Direitista</h4>
+        <p>Produção intelectual de qualidade para uma nova geração.</p>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../votacao/index.html">Votação</a></li>
+          <li><a href="#top">Voltar ao topo</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Contato</h4>
+        <p>Para sugestões ou colaborações:</p>
+        <p class="contact-email">contato@hubdireitista.com</p>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>© 2024 Hub Direitista. Todos os direitos reservados.</p>
+      <p class="footer-note">
+        Leitura otimizada • Sistema de votação chaveado • Produção intelectual independente
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

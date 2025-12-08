@@ -1,0 +1,137 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "A Crise do Estado Moderno",
+      "author": "Zer0",
+      "authorImg": "/public/persons/zer0g0ld.png",
+      "authorBio": "Analista político e escritor. Foco em teoria do Estado e filosofia política.",
+      "excerpt": "Uma análise profunda sobre a falência do modelo estatal contemporâneo e suas consequências para a liberdade individual.",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "O Estado moderno, tal como concebido a partir das revoluções liberais dos séculos XVIII e XIX, encontra-se em profunda crise. Esta crise não é meramente conjuntural, mas estrutural, atingindo os próprios fundamentos sobre os quais se ergueu a ideia de Estado-nação."
+        },
+        {
+          "type": "paragraph",
+          "text": "Observamos três dimensões principais desta crise: a perda de soberania para organizações supranacionais, a incapacidade de garantir a segurança e ordem pública, e a transformação do Estado de garantidor de direitos em agente opressor."
+        },
+        {
+          "type": "subtitle",
+          "text": "A Perda de Soberania"
+        },
+        {
+          "type": "paragraph",
+          "text": "A globalização financeira e o surgimento de organismos internacionais diluíram progressivamente a soberania dos Estados-nação. Hoje, decisões fundamentais sobre política econômica, regulação financeira e até aspectos da vida social são tomadas em instâncias distantes da vontade popular."
+        },
+        {
+          "type": "quote",
+          "text": "O Estado que não controla suas fronteiras, sua moeda e suas leis deixou de ser soberano.",
+          "author": "Carl Schmitt"
+        },
+        {
+          "type": "paragraph",
+          "text": "Este processo tem sido particularmente acelerado na Europa, onde a União Européia assumiu competências tradicionalmente estatais, mas também se verifica em outras regiões através de tratados comerciais e acordos internacionais."
+        },
+        {
+          "type": "subtitle",
+          "text": "A Insegurança e Desordem"
+        },
+        {
+          "type": "paragraph",
+          "text": "A função primordial do Estado - garantir a segurança dos cidadãos - está sendo sistematicamente abandonada. O monopólio da violência legítima, conceito weberiano fundamental, é questionado tanto por grupos criminosos organizados quanto por movimentos que contestam a autoridade estatal."
+        },
+        {
+          "type": "paragraph",
+          "text": "As grandes cidades brasileiras são exemplos vívidos desta realidade, onde o Estado muitas vezes não consegue assegurar o básico: a vida e propriedade dos cidadãos."
+        },
+        {
+          "type": "subtitle",
+          "text": "Do Estado Protetor ao Estado Opressor"
+        },
+        {
+          "type": "paragraph",
+          "text": "Paradoxalmente, enquanto falha em suas funções essenciais, o Estado moderno expande seu controle sobre a vida privada dos cidadãos. A vigilância massiva, o controle da informação e a regulação excessiva da vida econômica caracterizam um Estado que, incapaz de cumprir suas obrigações básicas, busca compensar através de controle burocrático."
+        },
+        {
+          "type": "paragraph",
+          "text": "Conclusão: A crise do Estado moderno exige uma reavaliação profunda do contrato social. Ou reinventamos as instituições estatais para o século XXI, ou assistiremos à sua gradual irrelevância."
+        }
+      ],
+      "link": "https://zer0g0ld.substack.com/p/crise-estado-moderno",
+      "readingTime": 8,
+      "votes": 42,
+      "date": "2024-01-01",
+      "week": 1,
+      "day": 1,
+      "category": "Política",
+      "tags": ["Estado", "Soberania", "Política", "Filosofia"],
+      "status": "published",
+      "allowVoting": true
+    },
+    {
+      "id": 2,
+      "title": "Revolução Conservadora",
+      "author": "Staan Marsh",
+      "authorImg": "/public/persons/Staan_Marsh.png",
+      "authorBio": "Escritor e analista cultural. Especializado em movimentos juvenis e transformações sociais.",
+      "excerpt": "Por que os jovens estão se voltando para valores tradicionais em meio ao caos progressista.",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Nas últimas duas décadas, observamos um fenômeno que desafia as narrativas dominantes sobre progresso social: o retorno dos jovens a valores conservadores. Este movimento, que alguns chamam de 'revolução conservadora', não é um simples backlash reacionário, mas uma resposta complexa à falência do projeto progressista."
+        },
+        {
+          "type": "paragraph",
+          "text": "A geração que cresceu na era da internet, da globalização e do relativismo moral está redescobrindo a importância da tradição, da família e da identidade nacional."
+        },
+        {
+          "type": "subtitle",
+          "text": "A Falência do Progressismo"
+        },
+        {
+          "type": "paragraph",
+          "text": "O progressismo prometeu liberdade, mas entregou alienação. Prometeu identidade fluida, mas criou indivíduos desenraizados. Prometeu felicidade através do consumo e do hedonismo, mas produziu epidemias de depressão e solidão."
+        },
+        {
+          "type": "quote",
+          "text": "Quando você tira as raízes de uma árvore, ela não se torna livre - ela morre.",
+          "author": "Roger Scruton"
+        },
+        {
+          "type": "paragraph",
+          "text": "Os jovens percebem que a promessa progressista de um mundo sem limites, sem hierarquias e sem tradições resultou em uma sociedade sem rumo, sem sentido e sem futuro."
+        },
+        {
+          "type": "subtitle",
+          "text": "O Retorno ao Concreto"
+        },
+        {
+          "type": "paragraph",
+          "text": "Contra a abstração das ideologias globalistas, os jovens conservadores buscam o concreto: família real, comunidade local, história compartilhada. Eles rejeitam a identidade como construção social em favor da identidade como herança e responsabilidade."
+        },
+        {
+          "type": "paragraph",
+          "text": "Esta é uma geração que testemunhou o fracasso das utopias e agora busca ancoragem em realidades duráveis."
+        }
+      ],
+      "link": "https://substack.com/@adson02/p/revolucao-conservadora",
+      "readingTime": 6,
+      "votes": 38,
+      "date": "2024-01-02",
+      "week": 1,
+      "day": 2,
+      "category": "Cultura",
+      "tags": ["Conservadorismo", "Juventude", "Cultura", "Sociedade"],
+      "status": "published",
+      "allowVoting": true
+    }
+  ],
+  "settings": {
+    "currentWeek": 1,
+    "currentDay": 2,
+    "articlesPerDay": 2,
+    "votingDurationDays": 7,
+    "totalWeeks": 4
+  }
+}

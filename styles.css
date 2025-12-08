@@ -1,32 +1,4 @@
 /* ========================= */
-/*        BASE GLOBAL        */
-/* ========================= */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: "Times New Roman", serif;
-  background: radial-gradient(circle at top, #d7bf82 0%, #0b0b0b 75%);
-  color: #fff;
-  text-align: center;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-}
-
-img {
-  display: block;
-  user-select: none;
-}
-
-/* ========================= */
 /*         HEADER            */
 /* ========================= */
 

@@ -176,6 +176,61 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 }, { threshold: 0.2 });
+// ===============================================
+// Carrega artigos atuais na home
+// ===============================================
+async function loadCurrentArticles() {
+  try {
+    const response = await fetch('./src/data/articles.json');
+    const data = await response.json();
+    
+    // Calcula dia atual (simplificado)
+    const today = new Date();
+    const startDate = new Date('2024-01-01');
+    const diffDays = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
+    const currentDay = (diffDays % 28) + 1; // 4 semanas
+    
+    // Pega artigos do dia atual
+    const currentArticles = data.articles.filter(article => 
+      article.day === currentDay && article.status === 'published'
+    );
+    
+    // Cria container na home se não existir
+    let container = document.getElementById('current-articles');
+    if (!container && currentArticles.length > 0) {
+      container = document.createElement('div');
+      container.id = 'current-articles';
+      container.className = 'section';
+      container.innerHTML = `
+        <h2 class="section-title">Artigos do Dia</h2>
+        <div class="current-articles-preview"></div>
+        <a href="./pages/votacao/index.html" class="btn">Participar da Votação</a>
+      `;
+      
+      // Insere após a seção de introdução
+      document.querySelector('.intro').after(container);
+    }
+    
+    if (container && currentArticles.length > 0) {
+      const preview = container.querySelector('.current-articles-preview');
+      preview.innerHTML = currentArticles.map(article => `
+        <div class="current-article">
+          <h4>${article.title}</h4>
+          <p><small>por ${article.author}</small></p>
+          <p>${article.excerpt}</p>
+          <a href="./pages/votacao/index.html" class="link-btn">Votar</a>
+        </div>
+      `).join('');
+    }
+    
+  } catch (error) {
+    console.log('Não foi possível carregar artigos atuais:', error);
+  }
+}
+
+// Chame esta função no seu script.js principal
+loadCurrentArticles();
+
 
 // ===============================================
 // Renderiza tudo

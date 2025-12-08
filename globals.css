@@ -1,78 +1,7 @@
-:root {
-  /* ========================================= */
-  /*                 CORES                     */
-  /* ========================================= */
+/* ========================= */
+/*        BASE GLOBAL        */
+/* ========================= */
 
-  /* Paleta principal (ouro imperial + preto) */
-  --color-bg-dark: #0b0b0b;
-  --color-bg-gold: #d7bf82;
-  --color-bg-gradient: radial-gradient(circle at top, var(--color-bg-gold) 0%, var(--color-bg-dark) 75%);
-
-  /* Tons de ouro */
-  --gold-100: #fff7d8;
-  --gold-200: #f5e3b5;
-  --gold-300: #f0d89b;
-  --gold-400: #e6c677;
-  --gold-500: #d4b875;
-  --gold-600: #c2a163;
-
-  /* Neutros claros */
-  --white-90: rgba(255, 255, 255, 0.9);
-  --white-80: rgba(255, 255, 255, 0.8);
-  --white-70: rgba(255, 255, 255, 0.7);
-
-  /* ========================================= */
-  /*                TIPOGRAFIA                 */
-  /* ========================================= */
-  --font-base: "Times New Roman", serif;
-  --font-size-base: 18px;
-
-  /* Títulos */
-  --font-size-title: 58px;
-  --font-size-title-mobile: 40px;
-
-  /* ========================================= */
-  /*                 BORDAS                    */
-  /* ========================================= */
-
-  --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 18px;
-  --radius-pill: 40px;
-
-  /* ========================================= */
-  /*                SOMBRAS                    */
-  /* ========================================= */
-
-  --shadow-soft: 0 0 12px rgba(0, 0, 0, 0.35);
-  --shadow-hover: 0 0 16px rgba(255, 224, 150, 0.25);
-  --shadow-gold: 0 0 14px rgba(255, 220, 150, 0.35);
-
-  /* Sombras do texto */
-  --text-shadow-soft: 0 0 6px rgba(0, 0, 0, 0.4);
-  --text-shadow-medium: 0 0 10px rgba(0, 0, 0, 0.35);
-
-  /* ========================================= */
-  /*               VIDRO / BLUR                */
-  /* ========================================= */
-
-  --glass-bg: rgba(255, 255, 255, 0.08);
-  --glass-bg-hover: rgba(255, 255, 255, 0.15);
-  --glass-border: rgba(255, 255, 255, 0.22);
-  --glass-border-hover: rgba(255, 255, 255, 0.28);
-  --glass-blur: blur(6px);
-
-  /* ========================================= */
-  /*             ANIMAÇÕES / TEMPO             */
-  /* ========================================= */
-
-  --transition-default: 0.3s ease;
-  --transition-fast: 0.18s ease;
-  --transition-slow: 0.4s ease;
-}
-
-
-/* GLOBAL BASE */
 * {
   margin: 0;
   padding: 0;
@@ -84,8 +13,8 @@ html {
 }
 
 body {
-  font-family: var(--font-base);
-  background: var(--color-bg-gradient);
+  font-family: "Times New Roman", serif;
+  background: radial-gradient(circle at top, #d7bf82 0%, #0b0b0b 75%);
   color: #fff;
   text-align: center;
   line-height: 1.65;
