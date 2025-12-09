@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="../../../public/icons/favicon.ico" />
+  <title>Hub Direitista - Plataformas</title>
+  <link rel="stylesheet" href="../../../globals.css" />
+  <link rel="stylesheet" href="../../../styles.css" />
+  <link rel="stylesheet" href="./plataformas.css" />
+  <script src="./plataformas.js" defer></script>
+  <script src="../../../script.js" defer></script>
+</head>
+<body>
+  <!-- Componente Navbar -->
+  <menu-navbar></menu-navbar>
+
+  <!-- HEADER DA PÁGINA -->
+  <header class="header">
+    <h1 class="title">
+      <span class="title-motto">PLATAFORMAS</span>
+      HUB DIREITISTA
+      <img src="../../../public/icons/selo.svg" alt="Selo O Futuro é Glorioso" class="selo" />
+    </h1>
+
+    <p class="subtitle">
+      Nossas comunidades e espaços de discussão online.
+    </p>
+  </header>
+
+  <!-- PLATAFORMAS PRINCIPAIS -->
+  <main class="plataformas-container">
+    <section class="plataformas-section">
+      <h2 class="section-title">Comunidades Ativas</h2>
+      <div id="plataformas-grid" class="plataformas-grid"></div>
+    </section>
+
+    <section class="pronto-section">
+      <h2 class="section-title">Em Breve</h2>
+      <div id="pronto-grid" class="pronto-grid"></div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2024 Hub Direitista. Todos os direitos reservados.</p>
+    <a href="../../index.html" class="btn">Voltar à Home</a>
+  </footer>
+
+  <!-- Carregue o componente Navbar -->
+  <script type="module" src="../../../src/components/Navbar.js"></script>
+</body>
+</html>

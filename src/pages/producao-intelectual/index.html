@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="../../../public/icons/favicon.ico" />
+  <title>Hub Direitista - Produção Intelectual</title>
+  <link rel="stylesheet" href="../../../globals.css" />
+  <link rel="stylesheet" href="../../../styles.css" />
+  <link rel="stylesheet" href="./producao.css" />
+  <script src="./producao.js" defer></script>
+  <script src="../../../script.js" defer></script>
+</head>
+<body>
+  <!-- Componente Navbar -->
+  <menu-navbar></menu-navbar>
+
+  <!-- HEADER DA PÁGINA -->
+  <header class="header">
+    <h1 class="title">
+      <span class="title-motto">PRODUÇÃO INTELECTUAL</span>
+      HUB DIREITISTA
+      <img src="../../../public/icons/selo.svg" alt="Selo O Futuro é Glorioso" class="selo" />
+    </h1>
+
+    <p class="subtitle">
+      Conteúdo acadêmico, artigos, estudos e análises produzidos pelos membros do hub.
+    </p>
+  </header>
+
+  <!-- FILTROS -->
+  <section class="filters">
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="all">Todos</button>
+      <button class="filter-btn" data-filter="economia">Economia</button>
+      <button class="filter-btn" data-filter="politica">Política</button>
+      <button class="filter-btn" data-filter="filosofia">Filosofia</button>
+      <button class="filter-btn" data-filter="historia">História</button>
+      <button class="filter-btn" data-filter="cultura">Cultura</button>
+    </div>
+    <div class="search-box">
+      <input type="text" id="search-input" placeholder="Buscar conteúdo..." />
+      <button id="search-btn">🔍</button>
+    </div>
+  </section>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="producao-container">
+    <!-- SEÇÃO DE ARTIGOS -->
+    <section class="content-section">
+      <h2 class="section-title">Artigos e Ensaios</h2>
+      <div id="artigos-container" class="cards-grid"></div>
+    </section>
+
+    <!-- SEÇÃO DE ESTUDOS -->
+    <section class="content-section">
+      <h2 class="section-title">Estudos e Pesquisas</h2>
+      <div id="estudos-container" class="cards-grid"></div>
+    </section>
+
+    <!-- SEÇÃO DE LIVROS -->
+    <section class="content-section">
+      <h2 class="section-title">Livros e E-books</h2>
+      <div id="livros-container" class="cards-grid"></div>
+    </section>
+
+    <!-- SEÇÃO DE AUTORES -->
+    <section class="content-section">
+      <h2 class="section-title">Autores</h2>
+      <div id="autores-container" class="autores-grid"></div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2024 Hub Direitista. Todos os direitos reservados.</p>
+    <a href="../../../index.html" class="btn">Voltar à Home</a>
+  </footer>
+
+  <!-- Carregue o componente Navbar -->
+  <script type="module" src="../../../src/components/Navbar.js"></script>
+</body>
+</html>
