@@ -8,7 +8,6 @@ const portavozeData = [
     plataformas: [
       { nome: "YouTube", link: "https://www.youtube.com/@MidiaBH", icon: "▶️" },
       { nome: "Kick", link: "https://kick.com/brunodiaspr", icon: "🎮" },
-      { nome: "Twitter/X", link: "#", icon: "🐦" }
     ],
     stats: {
       seguidores: "50K+",

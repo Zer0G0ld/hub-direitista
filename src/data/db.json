@@ -295,12 +295,6 @@
           "type": "external",
           "icon": "🎮",
           "metrics": "15K seguidores"
-        },
-        "Email": {
-          "url": "mailto:brunoyagodias@gmail.com",
-          "type": "external",
-          "icon": "✉️",
-          "metrics": "Contato direto"
         }
       }
     }
