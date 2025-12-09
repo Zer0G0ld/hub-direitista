@@ -33,57 +33,6 @@ class Footer extends HTMLElement {
                                 e enfrenta a decadência política.
                             </p>
                         </div>
-
-                        <!-- Links Rápidos -->
-                        <div class="footer-links">
-                            <h3 class="footer-title">Navegação</h3>
-                            <ul class="footer-menu">
-                                <li><a href="../../index.html" class="footer-link">
-                                    <span class="link-icon">🏠</span>
-                                    <span class="link-text">Home</span>
-                                </a></li>
-                                <li><a href="../producao-intelectual/index.html" class="footer-link">
-                                    <span class="link-icon">📚</span>
-                                    <span class="link-text">Produção Intelectual</span>
-                                </a></li>
-                                <li><a href="../porta-vozes/index.html" class="footer-link">
-                                    <span class="link-icon">🎙️</span>
-                                    <span class="link-text">Porta-vozes</span>
-                                </a></li>
-                                <li><a href="../plataformas/index.html" class="footer-link">
-                                    <span class="link-icon">💬</span>
-                                    <span class="link-text">Plataformas</span>
-                                </a></li>
-                                <li><a href="../artigo/index.html" class="footer-link">
-                                    <span class="link-icon">📝</span>
-                                    <span class="link-text">Artigos</span>
-                                </a></li>
-                                <li><a href="../votacao/index.html" class="footer-link">
-                                    <span class="link-icon">🗳️</span>
-                                    <span class="link-text">Votação</span>
-                                </a></li>
-                            </ul>
-                        </div>
-
-                        <!-- Redes Sociais -->
-                        <div class="footer-social">
-                            <h3 class="footer-title">Conecte-se</h3>
-                            <p class="social-description">
-                                Junte-se à nossa comunidade e participe das discussões.
-                            </p>
-                            <div class="social-icons">
-                                <a href="https://discord.gg/XncGYt2Y7g" 
-                                   class="social-icon discord" 
-                                   target="_blank" 
-                                   rel="noopener noreferrer"
-                                   aria-label="Discord do Hub Direitista">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M20.317 4.369a19.791 19.791 0 00-4.885-1.515a.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0a12.64 12.64 0 00-.617-1.25a.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.579.099 18.057a.082.082 0 00.031.057a19.9 19.9 0 005.993 3.03a.078.078 0 00.084-.028c.462-.63.872-1.295 1.226-1.994a.076.076 0 00-.041-.106a13.107 13.107 0 01-1.872-.892a.077.077 0 01-.008-.128c.125-.094.25-.188.372-.283a.076.076 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.076.076 0 01.078.01c.12.095.245.189.37.283a.077.077 0 01-.006.127a12.3 12.3 0 01-1.873.892a.077.077 0 00-.041.107c.355.698.765 1.363 1.226 1.993a.076.076 0 00.084.028a19.839 19.839 0 006.002-3.03a.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/>
-                                    </svg>
-                                    <span class="social-text">Discord</span>
-                                </a>
-                            </div>
-                        </div>
                     </div>
 
                     <!-- Divisor -->
@@ -95,21 +44,6 @@ class Footer extends HTMLElement {
                             <div class="copyright">
                                 <p>© ${currentYear} Hub Direitista. Todos os direitos reservados.</p>
                                 <p class="footer-motto">"O Futuro é Glorioso"</p>
-                            </div>
-                            
-                            <div class="footer-actions">
-                                <a href="../../index.html" class="footer-btn home-btn">
-                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-                                    </svg>
-                                    Voltar à Home
-                                </a>
-                                <button class="footer-btn top-btn" id="back-to-top">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
-                                    </svg>
-                                    Topo
-                                </button>
                             </div>
                         </div>
                     </div>
