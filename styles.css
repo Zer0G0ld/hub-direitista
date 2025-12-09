@@ -1,4 +1,62 @@
 /* ========================= */
+/*           MENU            */
+/* ========================= */
+.menu{
+  border: 2px solid #e9cd7a;
+  display: block;
+}
+
+.logo{
+  float: left;
+  text-align: center;
+  display: block;
+}
+
+.logo img{
+  margin: 5px;
+  max-width: 50px;
+  border-radius: 50%;
+  border: 2px solid #e9cd7a;
+  float: left;
+}
+
+.logo span{
+  margin-top: 15px;
+  font-size: 15px;
+  float: left;
+  color: gold;
+  font-style: italic;
+  font-size: 18px;
+}
+
+.menu-item{
+  float: right;
+  margin: 15px;
+}
+
+.desktop{
+  display: block;
+}
+
+.desktop ul li{
+  list-style: none;
+  display: inline;
+  margin: 8px;
+  padding-top: 5px;
+}
+
+.desktop ul li a{
+  font-size: 18px;
+  text-decoration: none;
+  color: white;
+}
+
+.desktop ul li a:hover{
+  text-decoration: underline;
+  color: #f5dca1;
+}
+
+/* ========================= */
 /*         HEADER            */
 /* ========================= */
 
