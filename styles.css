@@ -2,10 +2,11 @@
 /*        BASE GLOBAL        */
 /* ========================= */
 
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Times New Roman", serif;
 }
 
 html {
@@ -13,8 +14,7 @@ html {
 }
 
 body {
-  font-family: "Times New Roman", serif;
-  background: radial-gradient(circle at top, #d7bf82 0%, #0b0b0b 75%);
+  background: radial-gradient(circle at top, #7f6b37 0%, #0b0b0b 75%);
   color: #fff;
   text-align: center;
   line-height: 1.65;
@@ -25,6 +25,16 @@ img {
   display: block;
   user-select: none;
 }
+
+.center{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2%;
+}
+
+.left{float: left;}
+.right{float: right;}
+.clear{clear: both;}
 
 /* ========================= */
 /*           MENU            */
@@ -83,6 +93,7 @@ img {
   text-decoration: underline;
   color: #f5dca1;
 }
+
 
 /* ========================= */
 /*         HEADER            */
@@ -346,6 +357,96 @@ img {
   box-shadow: 0 0 10px rgba(255, 225, 160, 0.45);
 }
 
+/* pesonalização autores*/
+.author{
+  display: inline block;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2%;
+}
+
+.list-author{
+  display: block;
+}
+
+.list-author >.full-person{
+  display: block;
+  float: left;
+  text-align: center;
+  width: 33.3%;
+  min-height: 180px;
+  padding: 25px;
+}
+
+.list-author >.full-person >img{
+  text-align: center;
+  display: inline;
+}
+
+.list-author >.full-person >.fp-info >.fp-links{flex-direction: column;margin: 5px;}
+.list-author >.full-person >.fp-info >.fp-links a{font-size: 20px;}
+
+/* ========================= */
+/*        destaque         */
+/* ========================= */
+
+  .destaque{
+    margin: 10px 0;
+    border-bottom: 2px solid #e9cd7a;
+    display: block;
+  }
+
+  .texto-singlo{
+    width: 100%;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid #e9cd7a;
+    min-height: 320px;
+    text-align: center;
+    margin: 12px 0;
+    display: block;
+  }
+
+  .info{
+    width: 50%;
+    padding: 5px;
+    text-align: center;
+    display: inline-block;
+  }
+
+  .info-img{
+    height: 300px;
+    padding: 5px 3px;
+  }
+
+  .info a{
+    font-size: 18px;
+    color: #d4b875;
+    text-decoration: none;
+  }
+
+  .info p{
+    margin: 5px;
+  }
+
+  .info h3{
+    text-align: center;
+  }
+
+  .obs{
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .obs h3{
+    font-size: 30px;
+  }
+
+  .obs a{
+    color: #d4b875;
+    text-decoration: none;
+  }
+
 /* ========================= */
 /*        footer         */
 /* ========================= */
@@ -357,6 +458,13 @@ img {
 /* ========================= */
 
 @media (max-width: 650px) {
+
+  /*liompa base*/
+
+  .leaft,.right{
+    float: none;
+  }
+
   .title {
     font-size: 40px;
   }
@@ -374,9 +482,48 @@ img {
   .col {
     max-width: 100%;
   }
+
+    /* pesonalização autores*/
+  .author{
+    max-width: 970px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: left;
+  }
+
+  .list-author{
+     display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .list-author >.full-person{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    padding: 16px;
+  }
+
+  .list-author >.full-person >img{
+    display: block;
+  }
+
+  .list-author >.full-person >.fp-info >.fp-links{
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;}
+  .list-author >.full-person >.fp-info >.fp-links a{font-size: 14px;}
+    
+  /*texto-destaque*/
+
+  .info-img{
+    width: 100%;
+    float: none;
+  }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 450px){
   .title {
     font-size: 32px;
   }
