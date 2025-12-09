@@ -20,8 +20,6 @@ const hubData = {
     { name: "Aristocracia", img: "./public/icons/Aristocracia.png", links: { Discord: "https://discord.gg/XncGYt2Y7g" } },
   ]
 };
-/// Deve puxar do arquivo db.json
-//import hubData from "./src/data/db.json" assert { type: "json" };
 
 // ===============================================
 // GERADOR DE HTML AUTOMÁTICO (mini e full)
@@ -186,4 +184,3 @@ renderSection(hubData.portavoze, "#mini-portavoze", "#lista-portavoze");
 renderSection(hubData.plataformas, "#mini-plataformas", "#lista-plataformas");
 renderArticlesRSS(hubData.producao, "#lista-artigos");
 //renderMiniArticlesRandom(hubData.producao, "#mini-producao", 4);
-
