@@ -1,61 +1,181 @@
 /* ========================= */
-/*           MENU            */
+/*         NAVBAR           */
 /* ========================= */
-.menu{
-  border: 2px solid #e9cd7a;
-  display: block;
+
+.navbar {
+  background-color: #1a1a1a; /* Fundo escuro para contraste */
+  border-bottom: 2px solid #e9cd7a;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-.logo{
-  float: left;
-  text-align: center;
-  display: block;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.logo img{
-  margin: 5px;
-  max-width: 50px;
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   border: 2px solid #e9cd7a;
-  float: left;
+  object-fit: cover;
 }
 
-.logo span{
-  margin-top: 15px;
-  font-size: 15px;
-  float: left;
+.logo span {
+  font-size: 18px;
   color: gold;
   font-style: italic;
-  font-size: 18px;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-.menu-item{
-  float: right;
-  margin: 15px;
+/* Menu de Navegação */
+.nav-menu ul {
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
 }
 
-.desktop{
-  display: block;
-}
-
-.desktop ul li{
+.nav-menu li {
   list-style: none;
-  display: inline;
-  margin: 8px;
-  padding-top: 5px;
 }
 
-.desktop ul li a{
-  font-size: 18px;
-  text-decoration: none;
+.nav-menu a {
+  font-size: 16px;
   color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  position: relative;
 }
 
-.desktop ul li a:hover{
-  text-decoration: underline;
+.nav-menu a:hover {
   color: #f5dca1;
+  background-color: rgba(233, 205, 122, 0.1);
 }
 
+/* Efeito de sublinhado animado */
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #e9cd7a;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-menu a:hover::after {
+  width: 80%;
+}
+
+/* Botão para Mobile */
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.mobile-menu-btn span {
+  width: 25px;
+  height: 2px;
+  background-color: white;
+  transition: 0.3s;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: flex;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #1a1a1a;
+    border-top: 1px solid #e9cd7a;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 20px;
+  }
+  
+  .nav-menu li {
+    width: 100%;
+  }
+  
+  .nav-menu a {
+    display: block;
+    padding: 15px;
+    border-bottom: 1px solid rgba(233, 205, 122, 0.2);
+  }
+  
+  .nav-menu a:last-child {
+    border-bottom: none;
+  }
+}
+
+/* Item ativo */
+.nav-menu a.active {
+  color: #e9cd7a;
+  background-color: rgba(233, 205, 122, 0.15);
+}
+
+.nav-menu a.active::after {
+  width: 80%;
+}
+
+/* Efeito no botão mobile quando ativo */
+.mobile-menu-btn.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
 /* ========================= */
 /*         HEADER            */
 /* ========================= */

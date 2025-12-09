@@ -3,21 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/x-icon" href="../../public/icons/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="../../../public/icons/favicon.ico" />
   <title>Hub Direitista | Votação Chaveada</title>
-  <link rel="stylesheet" href="../../globals.css" />
-  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../../../globals.css" />
+  <link rel="stylesheet" href="../../../styles.css" />
   <link rel="stylesheet" href="./votacao.css" />
+  
   <script src="./votacao.js" defer type="module"></script>
 </head>
 <body>
+  <!-- Componente Navbar menu-navbar -->
+  <menu-navbar></menu-navbar>
 
   <!-- HEADER -->
   <header class="header">
     <h1 class="title">
       <span class="title-motto">VOTAÇÃO CHAVEADA</span>
       HUB DIREITISTA
-      <img src="../../public/icons/selo.svg" alt="Selo O Futuro é Glorioso" class="selo" />
+      <img src="../../../public/icons/selo.svg" alt="Selo O Futuro é Glorioso" class="selo" />
     </h1>
 
     <p class="subtitle">
@@ -186,6 +189,7 @@
       <a href="../../index.html">← Voltar para Home</a>
     </p>
   </footer>
-
+  <!-- Carregue o componente Navbar POR ÚLTIMO -->
+  <script type="module" src="../../components/Navbar.js"></script>
 </body>
 </html>

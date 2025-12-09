@@ -231,7 +231,6 @@ async function loadCurrentArticles() {
 // Chame esta função no seu script.js principal
 loadCurrentArticles();
 
-
 // ===============================================
 // Renderiza tudo
 // ===============================================

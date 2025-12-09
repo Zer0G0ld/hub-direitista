@@ -7,29 +7,12 @@
   <title>Hub Direitista</title>
   <link rel="stylesheet" href="globals.css" />
   <link rel="stylesheet" href="styles.css" />
+  <!-- O script.js será carregado ANTES do componente -->
   <script src="script.js" defer></script>
 </head>
 <body>
-  <!--nev-bar-->
-  <section class="menu">
-    <div class="center">
-      <div class="logo">
-        <img src="public/icons/HD.png">
-        <span>Futuro é Glorioso</span>
-      </div><!--logo-->
-      <div class="menu-item">
-        <nav class="desktop">
-          <ul>
-            <li><a href="">Votação</a></li>
-            <li><a href="#sec-producao">Lista de atores</a></li>
-            <li><a href="#destaque">Destaques da Semana</a></li>
-            <li><a href="#sec-plataformas">Comunidades</a></li>
-          </ul>
-        </nav><!--desktop-->
-      </div><!--menu-item-->
-    </div><!--center-->
-    <div class="clear"></div>
-  </section><!--menu-->
+  <!-- Componente Navbar menu-navbar -->
+  <menu-navbar></menu-navbar>
 
   <!-- HEADER -->
   <header class="header">
@@ -127,5 +110,7 @@
     <p>© 2024 Hub Direitista. Todos os direitos reservados.</p>
   </footer>
 
+  <!-- Carregue o componente Navbar POR ÚLTIMO -->
+  <script type="module" src="src/components/Navbar.js"></script>
 </body>
 </html>
