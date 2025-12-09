@@ -1,79 +1,378 @@
 {
-  "producao": [
+  "metadata": {
+    "version": "2.1",
+    "lastUpdated": "2025-12-09",
+    "description": "Hub Direitista - Base de Dados Centralizada",
+    "totalMembers": 8,
+    "totalArticles": 280,
+    "maintainers": ["zer0"],
+    "categories": [
+      "Economia",
+      "Política",
+      "Filosofia",
+      "História",
+      "Cultura",
+      "Segurança",
+      "Tecnologia",
+      "Religião",
+      "Educação",
+      "Saúde"
+    ]
+  },
+
+  "members": [
     {
+      "id": "zer0",
       "name": "Zer0",
+      "bio": "Desenvolvedor full-stack e criador do Hub Direitista. Especialista em tecnologia e análise política.",
+      "role": "Founder & Dev",
       "img": "./public/persons/zer0g0ld.png",
+      "color": "#f5dca1",
+      "featured": true,
+      "verified": true,
+      "joinDate": "2024-01-01",
+      "expertise": ["Tecnologia", "Política", "Filosofia"],
+      "stats": {
+        "articlesCount": 30,
+        "subscribers": "1.2K",
+        "engagement": "95%"
+      },
+      "tags": ["tecnologia", "desenvolvimento", "direita", "análise"],
+      "contentTypes": ["artigos", "estudos", "código"],
       "links": {
-        "Substack": "https://zer0g0ld.substack.com/"
+        "Substack": {
+          "url": "https://zer0g0ld.substack.com/",
+          "type": "external",
+          "icon": "📝",
+          "label": "Newsletter"
+        },
+        "GitHub": {
+          "url": "https://github.com/Zer0G0ld",
+          "type": "external",
+          "icon": "💻",
+          "label": "GitHub"
+        },
+        "Website": {
+          "url": "https://zerodev-blush.vercel.app/",
+          "type": "external",
+          "icon": "🌐",
+          "label": "Website"
+        }
       }
     },
     {
+      "id": "staan-marsh",
       "name": "Staan Marsh",
+      "bio": "Analista político e produtor de conteúdo independente. Especialista em política comparada.",
+      "role": "Analista Político",
       "img": "./public/persons/Staan_Marsh.png",
+      "color": "#d4b896",
+      "featured": true,
+      "verified": true,
+      "joinDate": "2024-02-15",
+      "expertise": ["Política", "Economia", "Geopolítica"],
+      "stats": {
+        "articlesCount": 45,
+        "videoCount": 8,
+        "subscribers": "5.2K",
+        "engagement": "92%"
+      },
+      "tags": ["política", "análise", "conteúdo", "geopolítica"],
+      "contentTypes": ["artigos", "vídeos", "análises"],
       "links": {
-        "Substack": "https://substack.com/@adson02"
+        "Substack": {
+          "url": "https://substack.com/@adson02",
+          "type": "external",
+          "icon": "📝"
+        },
+        "YouTube": {
+          "url": "https://youtube.com/@staanmarsh",
+          "type": "external",
+          "icon": "▶️"
+        }
       }
     },
     {
+      "id": "noir",
       "name": "Noir",
+      "bio": "Crítico cultural e analista de tendências. Especialista em análise de discurso e cultura.",
+      "role": "Crítico Cultural",
       "img": "./public/persons/Noir.png",
+      "color": "#a8a8a8",
+      "featured": true,
+      "joinDate": "2024-03-01",
+      "expertise": ["Cultura", "Comunicação", "Sociologia"],
+      "stats": {
+        "articlesCount": 28,
+        "subscribers": "3.1K",
+        "engagement": "88%"
+      },
+      "tags": ["cultura", "crítica", "tendências", "sociedade"],
+      "contentTypes": ["críticas", "ensaios", "análises"],
       "links": {
-        "Substack": "https://substack.com/@noiret"
+        "Substack": {
+          "url": "https://substack.com/@noiret",
+          "type": "external",
+          "icon": "📝"
+        },
+        "Twitter": {
+          "url": "https://twitter.com/noir_analyst",
+          "type": "external",
+          "icon": "🐦"
+        }
       }
     },
     {
-      "name": "Arnando Leal",
+      "id": "armando-leal",
+      "name": "Armando Leal",
+      "bio": "Historiador especializado em história política brasileira e pensamento conservador.",
+      "role": "Historiador",
       "img": "./public/persons/Armando_Leal.png",
+      "color": "#d17a6e",
+      "featured": true,
+      "joinDate": "2024-04-10",
+      "expertise": ["História", "Política Brasileira", "Conservadorismo"],
+      "stats": {
+        "articlesCount": 52,
+        "subscribers": "4.8K",
+        "engagement": "96%"
+      },
+      "tags": ["história", "política", "brasil", "conservadorismo"],
+      "contentTypes": ["artigos", "pesquisas", "documentos"],
       "links": {
-        "Substack": "https://substack.com/@historiacontraataca"
+        "Substack": {
+          "url": "https://substack.com/@historiacontraataca",
+          "type": "external",
+          "icon": "📝"
+        },
+        "Blog": {
+          "url": "https://historiacontraataca.com",
+          "type": "external",
+          "icon": "🌐"
+        }
       }
     },
     {
+      "id": "luciano-ls",
       "name": "Luciano LS",
+      "bio": "Economista e analista de política econômica. Especialista em macroeconomia e finanças.",
+      "role": "Economista",
       "img": "./public/persons/Luciano_LS.png",
+      "color": "#7fb069",
+      "featured": true,
+      "joinDate": "2024-05-05",
+      "expertise": ["Economia", "Finanças", "Política Econômica"],
+      "stats": {
+        "articlesCount": 38,
+        "subscribers": "3.5K",
+        "engagement": "90%"
+      },
+      "tags": ["economia", "política", "análise", "finanças"],
+      "contentTypes": ["análises", "dados", "projeções"],
       "links": {
-        "Substack": "https://substack.com/@lucianols"
+        "Substack": {
+          "url": "https://substack.com/@lucianols",
+          "type": "external",
+          "icon": "📝"
+        },
+        "YouTube": {
+          "url": "https://youtube.com/@lucianols",
+          "type": "external",
+          "icon": "▶️"
+        }
       }
     },
     {
+      "id": "gabriel-tavares",
       "name": "Gabriel C. Tavares",
+      "bio": "Produtor de conteúdo e criador digital. Especialista em comunicação e marketing político.",
+      "role": "Criador Digital",
       "img": "./public/persons/Gabriel_C_Tavares.png",
+      "color": "#6b8fb8",
+      "featured": false,
+      "joinDate": "2024-06-12",
+      "expertise": ["Comunicação", "Marketing", "Redes Sociais"],
+      "stats": {
+        "articlesCount": 22,
+        "subscribers": "2.1K",
+        "engagement": "85%"
+      },
+      "tags": ["conteúdo", "criação", "digital", "comunicação"],
+      "contentTypes": ["conteúdo", "posts", "vídeos"],
       "links": {
-        "Substack": "https://substack.com/@quietbiel93"
+        "Substack": {
+          "url": "https://substack.com/@quietbiel93",
+          "type": "external",
+          "icon": "📝"
+        }
       }
     },
     {
+      "id": "francielly-stempkowski",
       "name": "Francielly Stempkowski",
+      "bio": "Jornalista e pesquisadora independente. Especialista em fact-checking e pesquisa documental.",
+      "role": "Jornalista Investigativa",
       "img": "./public/persons/Francielly_Stempkowski.png",
+      "color": "#c88b7a",
+      "featured": false,
+      "joinDate": "2024-07-08",
+      "expertise": ["Jornalismo", "Pesquisa", "Investigação"],
+      "stats": {
+        "articlesCount": 19,
+        "subscribers": "1.8K",
+        "engagement": "89%"
+      },
+      "tags": ["jornalismo", "pesquisa", "investigação", "fact-checking"],
+      "contentTypes": ["reportagens", "investigações", "análises"],
       "links": {
-        "Substack": "https://substack.com/@stempkowski"
+        "Substack": {
+          "url": "https://substack.com/@stempkowski",
+          "type": "external",
+          "icon": "📝"
+        }
       }
     },
     {
+      "id": "cristian-brocca",
       "name": "Cristian Brocca",
+      "bio": "Filósofo e pensador político. Especialista em filosofia política e ética.",
+      "role": "Filósofo",
       "img": "./public/persons/Cristian_Brocca.png",
+      "color": "#b89968",
+      "featured": false,
+      "joinDate": "2024-08-20",
+      "expertise": ["Filosofia", "Ética", "Pensamento Político"],
+      "stats": {
+        "articlesCount": 31,
+        "subscribers": "2.4K",
+        "engagement": "91%"
+      },
+      "tags": ["filosofia", "política", "pensamento", "ética"],
+      "contentTypes": ["ensaios", "reflexões", "artigos"],
       "links": {
-        "Substack": "https://substack.com/@cristianbrocca"
+        "Substack": {
+          "url": "https://substack.com/@cristianbrocca",
+          "type": "external",
+          "icon": "📝"
+        },
+        "Instagram": {
+          "url": "https://instagram.com/cristian.brocca",
+          "type": "external",
+          "icon": "📷"
+        }
       }
     }
   ],
+
   "portavoze": [
     {
+      "id": "midia-bh",
       "name": "Midia BH",
+      "bio": "Plataforma de mídia independente de Belo Horizonte focada em análise política e cultural.",
+      "role": "Mídia Independente",
       "img": "./public/porta_vozes/BrunoDiasPR.jpg",
+      "color": "#ff6b35",
+      "featured": true,
+      "verified": true,
+      "expertise": ["Análise Política", "Jornalismo", "Cultura"],
+      "stats": {
+        "subscribers": "45K",
+        "videos": "320+",
+        "weeklyReach": "500K+"
+      },
+      "tags": ["mídia", "jornalismo", "independente", "análise"],
+      "contentTypes": ["vídeos", "lives", "entrevistas"],
+      "platforms": ["YouTube", "Kick", "Twitter"],
       "links": {
-        "YouTube": "https://www.youtube.com/@MidiaBH",
-        "Kick": "https://kick.com/brunodiaspr"
+        "YouTube": {
+          "url": "https://www.youtube.com/@MidiaBH",
+          "type": "external",
+          "icon": "▶️",
+          "metrics": "45K inscritos"
+        },
+        "Kick": {
+          "url": "https://kick.com/brunodiaspr",
+          "type": "external",
+          "icon": "🎮",
+          "metrics": "15K seguidores"
+        },
+        "Email": {
+          "url": "mailto:brunoyagodias@gmail.com",
+          "type": "external",
+          "icon": "✉️",
+          "metrics": "Contato direto"
+        }
       }
     }
   ],
+
   "plataformas": [
     {
+      "id": "aristocracia",
       "name": "Aristocracia",
+      "description": "Comunidade privada de discussão e debates entre membros da direita. Ambiente exclusivo para troca de ideias e networking.",
+      "type": "comunidade",
       "img": "./public/icons/default.jpg",
+      "color": "#3d3d3d",
+      "featured": true,
+      "members": 150,
+      "category": "comunidade",
+      "tags": ["comunidade", "debate", "privado", "networking"],
+      "access": "por convite",
+      "activity": "alta",
       "links": {
-        "Discord": "https://discord.gg/XncGYt2Y7g"
+        "Discord": {
+          "url": "https://discord.gg/XncGYt2Y7g",
+          "type": "external",
+          "icon": "💬"
+        }
+      }
+    },
+    {
+      "id": "foro-hub",
+      "name": "Fórum Hub",
+      "description": "Fórum público para discussões organizadas por tópicos e categorias.",
+      "type": "fórum",
+      "img": "./public/icons/default.jpg",
+      "color": "#4a6fa5",
+      "featured": false,
+      "members": 75,
+      "category": "comunidade",
+      "tags": ["fórum", "discussão", "público"],
+      "access": "aberto",
+      "activity": "média",
+      "links": {
+        "Website": {
+          "url": "#",
+          "type": "internal",
+          "icon": "🌐"
+        }
       }
     }
-  ]
+  ],
+
+  "categorias": {
+    "temas": [
+      { "id": "economia", "nome": "Economia", "cor": "#2ecc71", "descricao": "Análises econômicas, mercado, finanças" },
+      { "id": "politica", "nome": "Política", "cor": "#e74c3c", "descricao": "Política nacional e internacional" },
+      { "id": "filosofia", "nome": "Filosofia", "cor": "#3498db", "descricao": "Pensamento filosófico e ético" },
+      { "id": "historia", "nome": "História", "cor": "#9b59b6", "descricao": "Análise histórica e lições do passado" },
+      { "id": "cultura", "nome": "Cultura", "cor": "#f1c40f", "descricao": "Crítica cultural e social" },
+      { "id": "seguranca", "nome": "Segurança", "cor": "#2c3e50", "descricao": "Segurança pública e defesa nacional" },
+      { "id": "tecnologia", "nome": "Tecnologia", "cor": "#1abc9c", "descricao": "Tecnologia e inovação" },
+      { "id": "religiao", "nome": "Religião", "cor": "#95a5a6", "descricao": "Temas religiosos e morais" },
+      { "id": "educacao", "nome": "Educação", "cor": "#e67e22", "descricao": "Educação e formação intelectual" },
+      { "id": "saude", "nome": "Saúde", "cor": "#e84393", "descricao": "Saúde pública e medicina" }
+    ],
+    "tiposConteudo": [
+      { "id": "artigos", "nome": "Artigos", "icon": "📝" },
+      { "id": "estudos", "nome": "Estudos", "icon": "📊" },
+      { "id": "videos", "nome": "Vídeos", "icon": "▶️" },
+      { "id": "podcasts", "nome": "Podcasts", "icon": "🎙️" },
+      { "id": "livros", "nome": "Livros", "icon": "📚" },
+      { "id": "cursos", "nome": "Cursos", "icon": "🎓" },
+      { "id": "debates", "nome": "Debates", "icon": "💬" },
+      { "id": "graficos", "nome": "Gráficos", "icon": "📈" }
+    ]
+  }
 }

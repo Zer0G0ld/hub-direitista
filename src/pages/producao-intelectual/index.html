@@ -8,8 +8,7 @@
   <link rel="stylesheet" href="../../../globals.css" />
   <link rel="stylesheet" href="../../../styles.css" />
   <link rel="stylesheet" href="./producao.css" />
-  <script src="./producao.js" defer></script>
-  <script src="../../../script.js" defer></script>
+  <script src="./producao.js" type="module" defer></script>
 </head>
 <body>
   <!-- Componente Navbar -->
@@ -24,60 +23,196 @@
     </h1>
 
     <p class="subtitle">
-      Conteúdo acadêmico, artigos, estudos e análises produzidos pelos membros do hub.
+      Biblioteca digital de conteúdo acadêmico, artigos, estudos e análises produzidos pelos membros.
+      Classificados por temas, autores e nível de profundidade.
     </p>
   </header>
 
-  <!-- FILTROS -->
-  <section class="filters">
-    <div class="filter-buttons">
-      <button class="filter-btn active" data-filter="all">Todos</button>
-      <button class="filter-btn" data-filter="economia">Economia</button>
-      <button class="filter-btn" data-filter="politica">Política</button>
-      <button class="filter-btn" data-filter="filosofia">Filosofia</button>
-      <button class="filter-btn" data-filter="historia">História</button>
-      <button class="filter-btn" data-filter="cultura">Cultura</button>
+  <!-- DASHBOARD DE ESTATÍSTICAS -->
+  <section class="stats-dashboard">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">👥</div>
+          <h4>Autores Ativos</h4>
+          <p class="stat-number" id="total-authors">0</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📝</div>
+          <h4>Artigos Publicados</h4>
+          <p class="stat-number" id="total-articles">0</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🏷️</div>
+          <h4>Temas Abordados</h4>
+          <p class="stat-number" id="total-themes">0</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🎯</div>
+          <h4>Especializações</h4>
+          <p class="stat-number" id="total-expertise">0</p>
+        </div>
+      </div>
     </div>
-    <div class="search-box">
-      <input type="text" id="search-input" placeholder="Buscar conteúdo..." />
-      <button id="search-btn">🔍</button>
+  </section>
+
+  <!-- SISTEMA DE FILTROS AVANÇADO -->
+  <section class="filters-section">
+    <div class="container">
+      <!-- Busca Principal -->
+      <div class="search-container">
+        <div class="search-box">
+          <input type="text" id="search-input" 
+                 placeholder="Buscar por autor, tema, título ou conteúdo..." 
+                 aria-label="Buscar conteúdo" />
+          <button id="search-btn" aria-label="Buscar">🔍 Buscar</button>
+          <button id="clear-search" class="clear-btn" aria-label="Limpar busca">✕</button>
+        </div>
+      </div>
+
+      <!-- Filtros Rápidos -->
+      <div class="quick-filters">
+        <div class="filter-group">
+          <h3><span class="filter-icon">🏷️</span> Filtrar por Tema</h3>
+          <div class="filter-buttons" id="theme-filters"></div>
+        </div>
+
+        <div class="filter-group">
+          <h3><span class="filter-icon">👤</span> Filtrar por Autor</h3>
+          <div class="filter-buttons" id="author-filters"></div>
+        </div>
+
+        <div class="filter-group">
+          <h3><span class="filter-icon">📊</span> Tipo de Conteúdo</h3>
+          <div class="filter-buttons" id="content-type-filters"></div>
+        </div>
+      </div>
+
+      <!-- Filtros Avançados -->
+      <div class="advanced-filters">
+        <button class="toggle-advanced" id="toggle-advanced">
+          <span class="toggle-icon">⚙️</span> Filtros Avançados
+          <span class="toggle-arrow">▼</span>
+        </button>
+        
+        <div class="advanced-content" id="advanced-content">
+          <div class="advanced-grid">
+            <div class="advanced-group">
+              <label for="sort-select">Ordenar por:</label>
+              <select id="sort-select">
+                <option value="name-asc">Nome (A-Z)</option>
+                <option value="name-desc">Nome (Z-A)</option>
+                <option value="articles-desc">Mais Artigos</option>
+                <option value="engagement-desc">Maior Engajamento</option>
+                <option value="date-desc">Mais Recentes</option>
+                <option value="date-asc">Mais Antigos</option>
+              </select>
+            </div>
+            
+            <div class="advanced-group">
+              <label for="expertise-select">Especialização:</label>
+              <select id="expertise-select">
+                <option value="all">Todas as Especializações</option>
+              </select>
+            </div>
+            
+            <div class="advanced-group">
+              <label for="status-filter">Status:</label>
+              <select id="status-filter">
+                <option value="all">Todos</option>
+                <option value="featured">Em Destaque</option>
+                <option value="verified">Verificados</option>
+                <option value="active">Ativos</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUVEM DE EXPERTISE -->
+  <section class="expertise-cloud-section">
+    <div class="container">
+      <h2 class="section-title">Nuvem de Expertise</h2>
+      <p class="section-subtitle">Clique em um tema para filtrar os autores especializados</p>
+      <div class="expertise-cloud" id="expertise-cloud"></div>
     </div>
   </section>
 
   <!-- CONTEÚDO PRINCIPAL -->
   <main class="producao-container">
-    <!-- SEÇÃO DE ARTIGOS -->
-    <section class="content-section">
-      <h2 class="section-title">Artigos e Ensaios</h2>
-      <div id="artigos-container" class="cards-grid"></div>
-    </section>
+    <div class="container">
+      <!-- AUTORES EM DESTAQUE -->
+      <section class="featured-section">
+        <div class="section-header">
+          <h2 class="section-title">Autores em Destaque</h2>
+          <p class="section-subtitle">Principais contribuidores do Hub Direitista</p>
+        </div>
+        <div id="featured-authors" class="featured-grid"></div>
+      </section>
 
-    <!-- SEÇÃO DE ESTUDOS -->
-    <section class="content-section">
-      <h2 class="section-title">Estudos e Pesquisas</h2>
-      <div id="estudos-container" class="cards-grid"></div>
-    </section>
+      <!-- TODOS OS AUTORES -->
+      <section class="all-authors-section">
+        <div class="section-header">
+          <h2 class="section-title">Todos os Autores</h2>
+          <div class="results-info">
+            <span id="results-count">0</span> autores encontrados
+            <span class="filter-tags" id="active-filters"></span>
+          </div>
+        </div>
+        <div id="all-authors" class="authors-grid"></div>
+        
+        <!-- Paginação -->
+        <div class="pagination" id="pagination">
+          <button class="pagination-btn prev" disabled>
+            <span>←</span> Anterior
+          </button>
+          <div class="page-numbers" id="page-numbers"></div>
+          <button class="pagination-btn next">
+            Próximo <span>→</span>
+          </button>
+        </div>
+      </section>
 
-    <!-- SEÇÃO DE LIVROS -->
-    <section class="content-section">
-      <h2 class="section-title">Livros e E-books</h2>
-      <div id="livros-container" class="cards-grid"></div>
-    </section>
-
-    <!-- SEÇÃO DE AUTORES -->
-    <section class="content-section">
-      <h2 class="section-title">Autores</h2>
-      <div id="autores-container" class="autores-grid"></div>
-    </section>
+      <!-- CONTEÚDO PRODUZIDO -->
+      <section class="content-section">
+        <div class="section-header">
+          <h2 class="section-title">Conteúdo Produzido</h2>
+          <p class="section-subtitle">Artigos, estudos e publicações dos membros</p>
+        </div>
+        
+        <div class="content-tabs">
+          <button class="tab-btn active" data-tab="artigos">📝 Artigos</button>
+          <button class="tab-btn" data-tab="estudos">📊 Estudos</button>
+          <button class="tab-btn" data-tab="livros">📚 Livros</button>
+          <button class="tab-btn" data-tab="midia">🎥 Mídia</button>
+        </div>
+        
+        <div class="tab-content active" id="artigos-tab">
+          <div class="cards-grid" id="artigos-container"></div>
+        </div>
+        
+        <div class="tab-content" id="estudos-tab">
+          <div class="cards-grid" id="estudos-container"></div>
+        </div>
+        
+        <div class="tab-content" id="livros-tab">
+          <div class="cards-grid" id="livros-container"></div>
+        </div>
+        
+        <div class="tab-content" id="midia-tab">
+          <div class="cards-grid" id="midia-container"></div>
+        </div>
+      </section>
+    </div>
   </main>
 
   <!-- FOOTER -->
-  <footer class="footer">
-    <p>© 2024 Hub Direitista. Todos os direitos reservados.</p>
-    <a href="../../../index.html" class="btn">Voltar à Home</a>
-  </footer>
+  <down-footer></down-footer>
 
   <!-- Carregue o componente Navbar -->
   <script type="module" src="../../../src/components/Navbar.js"></script>
+  <script type="module" src="../../../src/components/Footer.js"></script>
 </body>
 </html>

@@ -9,21 +9,21 @@ const plataformasData = {
       link: "https://discord.gg/XncGYt2Y7g",
       status: "ativo",
       stats: {
-        membros: "500+",
-        canais: "20+",
-        online: "50+"
+        membros: "100+",
+        canais: "20+"
       }
     },
     {
       id: 2,
-      nome: "Fórum Hub",
-      descricao: "Fórum dedicado a debates estruturados, publicação de artigos e organização de projetos intelectuais.",
+      nome: "Biblioteca de Alexandria",
+      descricao: "Driver compartilhado com artigos, livros e estudos recomendados pela comunidade.",
       icon: "📚",
-      link: "#",
-      status: "em-breve",
+      link: "https://drive.google.com/drive/folders/1qoGY2h8hUOdXuaH6Z89L4IAnsYhtlqg6",
+      status: "ativo",
       stats: {
-        tópicos: "Em breve",
-        usuários: "Em breve"
+        tópicos: "diversos",
+        documentos: "100+",
+        acessos: "limitados"
       }
     }
   ],
@@ -42,6 +42,13 @@ const plataformasData = {
       descricao: "Podcast semanal com entrevistas e debates sobre atualidades.",
       icon: "🎙️",
       status: "planejado"
+    },
+    {
+      id: 103,
+      nome: "Fórum Hub",
+      descricao: "Fórum dedicado a debates estruturados, publicação de artigos e organização de projetos intelectuais.",
+      icon: "📚",
+      status: "em-breve"
     }
   ]
 };
