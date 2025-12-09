@@ -18,7 +18,7 @@ class Navbar extends HTMLElement {
       <header class="navbar">
         <div class="container">
           <a href="/" class="logo">
-            <img src="../../../public/icons/HD.png" alt="Logo Hub Direitista">
+            <img src="../../../public/icons/testes/HD.png" alt="Logo Hub Direitista">
             <span>Futuro é Glorioso</span>
           </a>
           

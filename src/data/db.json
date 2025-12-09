@@ -310,9 +310,8 @@
     {
       "id": "aristocracia",
       "name": "Aristocracia",
-      "description": "Comunidade privada de discussão e debates entre membros da direita. Ambiente exclusivo para troca de ideias e networking.",
       "type": "comunidade",
-      "img": "./public/icons/default.jpg",
+      "img": "./public/icons/png/aristocracia.png",
       "color": "#3d3d3d",
       "featured": true,
       "members": 150,
@@ -329,16 +328,15 @@
       }
     },
     {
-      "id": "foro-hub",
-      "name": "Fórum Hub",
-      "description": "Fórum público para discussões organizadas por tópicos e categorias.",
+      "id": "biblioteca-alexandria",
+      "name": "Biblioteca de Alexandria",
       "type": "fórum",
-      "img": "./public/icons/default.jpg",
+      "img": "./public/icons/png/LibraryofAlexandria.jpg",
       "color": "#4a6fa5",
       "featured": false,
       "members": 75,
       "category": "comunidade",
-      "tags": ["fórum", "discussão", "público"],
+      "tags": ["livros", "pdf", "público", "estudos"],
       "access": "aberto",
       "activity": "média",
       "links": {
