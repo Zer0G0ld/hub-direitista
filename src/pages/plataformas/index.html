@@ -8,8 +8,15 @@
   <link rel="stylesheet" href="../../../globals.css" />
   <link rel="stylesheet" href="../../../styles.css" />
   <link rel="stylesheet" href="./plataformas.css" />
-  <script src="./plataformas.js" defer></script>
+  
+  <!-- Ordem CORRETA de scripts -->
+  <!-- Primeiro carrega os componentes -->
+  <script type="module" src="../../../src/components/Navbar.js" defer></script>
+  <script type="module" src="../../../src/components/Footer.js" defer></script>
+  
+  <!-- Depois carrega os scripts principais -->
   <script src="../../../script.js" defer></script>
+  <script src="./plataformas.js" defer></script>
 </head>
 <body>
   <!-- Componente Navbar -->
@@ -30,6 +37,18 @@
 
   <!-- PLATAFORMAS PRINCIPAIS -->
   <main class="plataformas-container">
+    <!-- Adicione controles de busca/filtro -->
+    <div class="plataformas-controls">
+      <div class="search-box">
+        <input type="text" id="search-plataformas" placeholder="Buscar plataformas...">
+        <button id="search-plataformas-btn">🔍</button>
+      </div>
+      <div class="plataformas-filters"></div>
+    </div>
+
+    <!-- Adicione estatísticas -->
+    <div id="plataformas-stats" class="plataformas-stats"></div>
+
     <section class="plataformas-section">
       <h2 class="section-title">Comunidades Ativas</h2>
       <div id="plataformas-grid" class="plataformas-grid"></div>
@@ -42,12 +61,6 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="footer">
-    <p>© 2024 Hub Direitista. Todos os direitos reservados.</p>
-    <a href="../../../index.html" class="btn">Voltar à Home</a>
-  </footer>
-
-  <!-- Carregue o componente Navbar -->
-  <script type="module" src="../../../src/components/Navbar.js"></script>
+  <down-footer></down-footer>
 </body>
 </html>
