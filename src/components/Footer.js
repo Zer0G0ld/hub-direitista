@@ -1,3 +1,4 @@
+// Componente Footer como Web Component
 class Footer extends HTMLElement {
     constructor() {
         super();
